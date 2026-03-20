@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael Multimarca</title>
+<link rel="stylesheet" href="style_03.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Rafael Multimarca</h1>
+    <p>Produtos simples para exemplo</p>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#midia">Mídia</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section id="inicio">
+    <h2>Bem-vindo</h2>
+    <p>Bem-vindo à nossa loja online.</p>
+</section>
+
+<section id="produtos">
+    <h2>Produtos</h2>
+
+    <article>
+        <h3>Camiseta</h3>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200" alt="Camiseta básica confortável">
+            <figcaption>Camiseta confortável</figcaption>
+        </figure>
+        <p>Preço: R$ 49,90</p>
+    </article>
+
+    <article>
+        <h3>Tênis</h3>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" alt="Tênis esportivo para corrida">
+            <figcaption>Tênis para corrida</figcaption>
+        </figure>
+        <p>Preço: R$ 199,90</p>
+    </article>
+
+    <article>
+        <h3>Mochila</h3>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1509762774605-f07235a08f1f?w=200" alt="Mochila escolar resistente">
+            <figcaption>Mochila resistente</figcaption>
+        </figure>
+        <p>Preço: R$ 89,90</p>
+    </article>
+
+</section>
+
+<section id="sobre">
+    <h2>Sobre a Loja</h2>
+    <p>Nossa loja vende produtos de qualidade com preços acessíveis.</p>
+</section>
+
+<section id="midia">
+    <h2>Apresentação da Loja</h2>
+
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.webm" type="video/webm">
+
+        <track src="legenda.vtt" kind="subtitles" srclang="pt" label="Português" default>
+
+        Seu navegador não suporta vídeo.
+    </video>
+
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+
+    <form>
+
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefone">Telefone:</label><br>
+        <input type="tel" id="telefone" name="telefone"
+               pattern="[0-9]{11}" placeholder="11999999999"
+               title="Digite 11 números, ex: 11999999999" required><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Rafael Multimarca</p>
+</footer>
+
+</body>
+</html>
