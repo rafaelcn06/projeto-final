@@ -1,0 +1,17 @@
+:root {
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+
+  --fs-base: 1rem;
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+
+  --color-primary: #00bcd4;
+  --color-primary-dark: #0097a7;
+  --color-bg: #f4f4f4;
+  --color-text: #333;
+  --color-white: #fff;
+  --color-dark: #111;
+  --color-border: #ccc;
+}

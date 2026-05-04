@@ -1,0 +1,9 @@
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: var(--space-md);
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}

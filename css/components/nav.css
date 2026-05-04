@@ -1,0 +1,18 @@
+header {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  list-style: none;
+}
+
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+}

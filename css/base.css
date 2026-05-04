@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--fs-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
