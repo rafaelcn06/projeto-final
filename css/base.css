@@ -5,7 +5,10 @@ body {
   color: var(--color-text);
 }
 
-h1 { font-size: var(--fs-h1); }
+h1 { 
+  font-size: var(--fs-h1); 
+  margin-bottom: var(--space-md);
+}
 h2 { font-size: var(--fs-h2); }
 
 img, video {

@@ -4,3 +4,7 @@ footer {
   text-align: center;
   padding: var(--space-md);
 }
+
+.sac {
+  margin-bottom: var(--space-sm);
+}
