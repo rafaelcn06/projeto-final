@@ -1,11 +1,144 @@
-#produtos, #ofertas, #departamento, #relogios, #camisetas, #calcas, #tenis, #mochilas {
-  display: grid;
-  gap: var(--space-md);
+/* ========================================
+   CARD COMPONENT
+   ======================================== */
+
+.card {
+  background-color: var(--color-bg);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: 
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.card, .oferta, .produto {
-  background: var(--color-white);
-  padding: var(--space-md);
-  border-radius: 10px;
-  text-align: center;
+.card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   CARD IMAGE
+   ======================================== */
+
+.card__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--color-neutral-200);
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .card__image img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   CARD CONTENT
+   ======================================== */
+
+.card__content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: var(--lh-tight);
+}
+
+.card__description {
+  font-size: var(--fs-sm);
+  color: var(--color-text-light);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+/* ========================================
+   CARD META
+   ======================================== */
+
+.card__meta {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.card__category {
+  display: inline-block;
+  background-color: var(--color-primary-500);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+}
+
+.card__level {
+  display: inline-block;
+  background-color: var(--color-neutral-200);
+  color: var(--color-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+}
+
+/* ========================================
+   CARD BUTTON
+   ======================================== */
+
+.card__button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: 
+    background-color var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.card__button:hover {
+  background-color: var(--color-primary-600);
+  transform: translateY(-2px);
+}
+
+.card__button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   CARD FEATURED VARIANT
+   ======================================== */
+
+.card--featured {
+  border-color: var(--color-primary-500);
+  border-width: var(--border-normal);
+}
+
+.card--featured .card__category {
+  background-color: var(--color-primary-700);
 }

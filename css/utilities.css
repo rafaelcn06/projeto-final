@@ -1,0 +1,118 @@
+/* ========================================
+   5. UTILITIES - Helper Classes
+   ======================================== */
+
+/* Display */
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .u-visible-mobile {
+    display: none;
+  }
+}
+
+.u-visible-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .u-visible-desktop {
+    display: block;
+  }
+}
+
+/* Margins */
+.u-margin-top {
+  margin-top: var(--space-md) !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: var(--space-md) !important;
+}
+
+.u-margin-0 {
+  margin: 0 !important;
+}
+
+/* Padding */
+.u-padding-md {
+  padding: var(--space-md) !important;
+}
+
+.u-padding-lg {
+  padding: var(--space-lg) !important;
+}
+
+/* Text Alignment */
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+/* Text Transform */
+.u-uppercase {
+  text-transform: uppercase !important;
+}
+
+.u-lowercase {
+  text-transform: lowercase !important;
+}
+
+.u-capitalize {
+  text-transform: capitalize !important;
+}
+
+/* Font Weight */
+.u-font-bold {
+  font-weight: var(--fw-bold) !important;
+}
+
+.u-font-medium {
+  font-weight: var(--fw-medium) !important;
+}
+
+/* Colors */
+.u-text-primary {
+  color: var(--color-primary-500) !important;
+}
+
+.u-text-light {
+  color: var(--color-text-light) !important;
+}
+
+.u-bg-dark {
+  background-color: var(--color-neutral-900) !important;
+}
+
+.u-bg-light {
+  background-color: var(--color-neutral-50) !important;
+}
+
+/* Spacing Stack (for sections) */
+.u-space-lg {
+  margin-bottom: var(--space-lg) !important;
+}
+
+.u-space-xl {
+  margin-bottom: var(--space-xl) !important;
+}
+
+/* Truncate text */
+.u-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

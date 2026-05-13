@@ -1,73 +1,107 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camisetas - ARENA MULTIMARCAS</title>
-
-  <!-- CSS na ordem ITCSS -->
+  <title>Camisetas - Arena Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components/nav.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/card.css">
   <link rel="stylesheet" href="css/components/footer.css">
   <link rel="stylesheet" href="css/utilities.css">
 </head>
-
 <body>
-
-<header>
-  <h1>Rafael Multimarca</h1>
-
-  <nav>
-    <ul>
-      <li><a href="aula_03.html#inicio">Início</a></li>
-      <li><a href="departamento.html">Todo o Departamento</a></li>
-      <li><a href="aula_03.html#ofertas">Ofertas do Dia</a></li>
-      <li><a href="relogios.html">Relógios</a></li>
-      <li><a href="camisetas.html">Camisetas</a></li>
-      <li><a href="calcas.html">Calças</a></li>
-      <li><a href="tenis.html">Tênis</a></li>
-      <li><a href="mochilas.html">Mochilas</a></li>
-    </ul>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="aula_03.html" class="navbar__logo">Arena Fashion</a>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+      <ul class="navbar__menu" id="navbarMenu">
+        <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Início</a></li>
+        <li class="navbar__item"><a href="departamento.html" class="navbar__link">Todas as Categorias</a></li>
+        <li class="navbar__item"><a href="camisetas.html" class="navbar__link">Camisetas</a></li>
+        <li class="navbar__item"><a href="calcas.html" class="navbar__link">Calças</a></li>
+        <li class="navbar__item"><a href="tenis.html" class="navbar__link">Calçados</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
-
-<main>
-
-<section id="camisetas">
-  <h2>Camisetas</h2>
-
-  <div class="produto">
-    <h3>Camiseta Básica</h3>
-    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200" alt="Camiseta Básica">
-    <p>R$ 49,90</p>
+<main class="main">
+<section class="section">
+  <h2 class="section__title">Camisetas - Qualidade e Conforto</h2>
+  <div class="cards-grid">
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop" alt="Camiseta Básica"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Básica</h3>
+        <p class="card__description">100% algodão, macia e confortável. Disponível em várias cores para combinar com seu estilo.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Básico</span></div>
+        <button class="card__button">R$ 49,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop" alt="Camiseta Estampada"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Estampada</h3>
+        <p class="card__description">Designs exclusivos e originais com estampas de alta qualidade que não desbotam.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Exclusivo</span></div>
+        <button class="card__button">R$ 59,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop" alt="Camiseta Polo"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Polo</h3>
+        <p class="card__description">Estilo clássico e elegante, perfeita para ocasiões casuais e semi-formais.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Elegante</span></div>
+        <button class="card__button">R$ 69,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&h=300&fit=crop" alt="Camiseta Premium"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Premium Gola V</h3>
+        <p class="card__description">Tecido de alta qualidade com acabamento premium. Confortável para uso do dia a dia.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Premium</span></div>
+        <button class="card__button">R$ 79,90</button>
+      </div>
+    </article>
   </div>
-
-  <div class="produto">
-    <h3>Camiseta Estampada</h3>
-    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=200" alt="Camiseta Estampada">
-    <p>R$ 59,90</p>
-  </div>
-
-  <div class="produto">
-    <h3>Camiseta Polo</h3>
-    <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=200" alt="Camiseta Polo">
-    <p>R$ 69,90</p>
-  </div>
-
 </section>
-
 </main>
-
-<footer>
-  <div class="sac">
-    <p><a href="#">Sobre</a> | <a href="#">SAC</a></p>
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__column"><h4 class="footer__title">Categorias</h4>
+      <ul class="footer__list">
+        <li><a href="camisetas.html" class="footer__link">Camisetas</a></li>
+        <li><a href="calcas.html" class="footer__link">Calças</a></li>
+        <li><a href="tenis.html" class="footer__link">Calçados</a></li>
+        <li><a href="departamento.html" class="footer__link">Todas</a></li>
+      </ul>
+    </div>
+    <div class="footer__column"><h4 class="footer__title">Suporte</h4>
+      <ul class="footer__list">
+        <li><a href="aula_03.html" class="footer__link">Contato</a></li>
+        <li><a href="aula_03.html" class="footer__link">FAQ</a></li>
+        <li><a href="aula_03.html" class="footer__link">Rastreamento</a></li>
+        <li><a href="aula_03.html" class="footer__link">Devoluções</a></li>
+      </ul>
+    </div>
   </div>
-  <p>R&J Multimarcas</p>
+  <div class="footer__bottom">
+    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Fashion. Todos os direitos reservados.</p>
+  </div>
 </footer>
-
+<script src="js/main.js"></script>
 </body>
 </html>

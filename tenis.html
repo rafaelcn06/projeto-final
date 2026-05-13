@@ -1,73 +1,107 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tênis - ARENA MULTIMARCAS</title>
-
-  <!-- CSS na ordem ITCSS -->
+  <title>Calçados - Arena Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components/nav.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/card.css">
   <link rel="stylesheet" href="css/components/footer.css">
   <link rel="stylesheet" href="css/utilities.css">
 </head>
-
 <body>
-
-<header>
-  <h1>Rafael Multimarca</h1>
-
-  <nav>
-    <ul>
-      <li><a href="aula_03.html#inicio">Início</a></li>
-      <li><a href="departamento.html">Todo o Departamento</a></li>
-      <li><a href="aula_03.html#ofertas">Ofertas do Dia</a></li>
-      <li><a href="relogios.html">Relógios</a></li>
-      <li><a href="camisetas.html">Camisetas</a></li>
-      <li><a href="calcas.html">Calças</a></li>
-      <li><a href="tenis.html">Tênis</a></li>
-      <li><a href="mochilas.html">Mochilas</a></li>
-    </ul>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="aula_03.html" class="navbar__logo">Arena Fashion</a>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+      <ul class="navbar__menu" id="navbarMenu">
+        <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Início</a></li>
+        <li class="navbar__item"><a href="departamento.html" class="navbar__link">Todas as Categorias</a></li>
+        <li class="navbar__item"><a href="camisetas.html" class="navbar__link">Camisetas</a></li>
+        <li class="navbar__item"><a href="calcas.html" class="navbar__link">Calças</a></li>
+        <li class="navbar__item"><a href="tenis.html" class="navbar__link">Calçados</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
-
-<main>
-
-<section id="tenis">
-  <h2>Tênis</h2>
-
-  <div class="produto">
-    <h3>Tênis Esportivo</h3>
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" alt="Tênis Esportivo">
-    <p>R$ 199,90</p>
+<main class="main">
+<section class="section">
+  <h2 class="section__title">Calçados - Conforto para seus Pés</h2>
+  <div class="cards-grid">
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Tênis Casual"></div>
+      <div class="card__content">
+        <h3 class="card__title">Tênis Casual Confortável</h3>
+        <p class="card__description">Design confortável e moderno para o dia a dia. Palmilha anatomicamente desenvolvida para máximo conforto.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Casual</span></div>
+        <button class="card__button">R$ 149,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&h=300&fit=crop" alt="Sapato Social"></div>
+      <div class="card__content">
+        <h3 class="card__title">Sapato Social Elegante</h3>
+        <p class="card__description">Sapato clássico e elegante, ideal para ambientes corporativos e eventos formais. Material premium importado.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Formal</span></div>
+        <button class="card__button">R$ 199,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&fit=crop" alt="Tênis Esportivo"></div>
+      <div class="card__content">
+        <h3 class="card__title">Tênis Esportivo Premium</h3>
+        <p class="card__description">Desenvolvido para máximo desempenho nas atividades físicas. Tecnologia de amortecimento de última geração.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Esportivo</span></div>
+        <button class="card__button">R$ 249,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1462562692292-402355ad1389?w=400&h=300&fit=crop" alt="Sandália"></div>
+      <div class="card__content">
+        <h3 class="card__title">Sandália Confortável</h3>
+        <p class="card__description">Perfeita para clima quente e casual. Material respirável com suporte de arco plantar.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Casual</span></div>
+        <button class="card__button">R$ 89,90</button>
+      </div>
+    </article>
   </div>
-
-  <div class="produto">
-    <h3>Tênis Casual</h3>
-    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=200" alt="Tênis Casual">
-    <p>R$ 149,90</p>
-  </div>
-
-  <div class="produto">
-    <h3>Tênis Corrida</h3>
-    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200" alt="Tênis Corrida">
-    <p>R$ 249,90</p>
-  </div>
-
 </section>
-
 </main>
-
-<footer>
-  <div class="sac">
-    <p><a href="#">Sobre</a> | <a href="#">SAC</a></p>
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__column"><h4 class="footer__title">Categorias</h4>
+      <ul class="footer__list">
+        <li><a href="camisetas.html" class="footer__link">Camisetas</a></li>
+        <li><a href="calcas.html" class="footer__link">Calças</a></li>
+        <li><a href="tenis.html" class="footer__link">Calçados</a></li>
+        <li><a href="departamento.html" class="footer__link">Todas</a></li>
+      </ul>
+    </div>
+    <div class="footer__column"><h4 class="footer__title">Suporte</h4>
+      <ul class="footer__list">
+        <li><a href="aula_03.html" class="footer__link">Contato</a></li>
+        <li><a href="aula_03.html" class="footer__link">FAQ</a></li>
+        <li><a href="aula_03.html" class="footer__link">Rastreamento</a></li>
+        <li><a href="aula_03.html" class="footer__link">Devoluções</a></li>
+      </ul>
+    </div>
   </div>
-  <p>R&J Multimarcas</p>
+  <div class="footer__bottom">
+    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Fashion. Todos os direitos reservados.</p>
+  </div>
 </footer>
-
+<script src="js/main.js"></script>
 </body>
 </html>

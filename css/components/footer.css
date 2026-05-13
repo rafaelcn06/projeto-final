@@ -1,10 +1,112 @@
-footer {
-  background: var(--color-dark);
-  color: var(--color-white);
-  text-align: center;
-  padding: var(--space-md);
+/* ========================================
+   FOOTER COMPONENT
+   ======================================== */
+
+.footer {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-400);
+  margin-top: var(--space-2xl);
+  padding: var(--space-2xl) var(--space-lg);
 }
 
-.sac {
-  margin-bottom: var(--space-sm);
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: var(--border-thin) solid var(--color-neutral-800);
+}
+
+/* Tablets (>= 768px) - 2 columns */
+@media (min-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (>= 1200px) - 4 columns */
+@media (min-width: 1200px) {
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   FOOTER COLUMN
+   ======================================== */
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-50);
+  margin-bottom: var(--space-md);
+}
+
+/* ========================================
+   FOOTER LIST & LINKS
+   ======================================== */
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer__link {
+  color: var(--color-neutral-400);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  transition: 
+    color var(--transition-normal),
+    padding-left var(--transition-normal);
+  display: inline-block;
+  position: relative;
+}
+
+.footer__link:hover {
+  color: var(--color-primary-500);
+  padding-left: 0.5rem;
+}
+
+.footer__link::before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  bottom: 0;
+  width: 3px;
+  height: 3px;
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.footer__link:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   FOOTER BOTTOM
+   ======================================== */
+
+.footer__bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: var(--space-lg);
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: var(--fs-sm);
+  color: var(--color-neutral-500);
+  line-height: var(--lh-normal);
 }

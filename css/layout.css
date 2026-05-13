@@ -7,3 +7,61 @@ main {
 section {
   margin-bottom: var(--space-lg);
 }
+
+/* ========================================
+   SECTION LAYOUT
+   ======================================== */
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.section {
+  padding: var(--space-lg) 0;
+}
+
+.section__title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+/* ========================================
+   CARDS GRID - Responsive
+   ======================================== */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* Tablets (>= 768px) - 2 columns */
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (>= 1200px) - 3 columns */
+@media (min-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Card featured spans 2 columns on desktop */
+  .card--featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  /* Optional: Featured card can be full width for better design */
+  .cards-grid .card--featured:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+}

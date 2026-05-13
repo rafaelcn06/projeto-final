@@ -1,17 +1,104 @@
-body {
-  font-family: Arial, sans-serif;
-  font-size: var(--fs-base);
-  background: var(--color-bg);
-  color: var(--color-text);
+/* ========================================
+   2. BASE - Typographic Defaults
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-h1 { 
-  font-size: var(--fs-h1); 
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+  background-color: var(--color-neutral-50);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   HEADINGS
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
   margin-bottom: var(--space-md);
 }
-h2 { font-size: var(--fs-h2); }
 
-img, video {
-  max-width: 100%;
+h1 {
+  font-size: var(--fs-3xl);
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+}
+
+h3 {
+  font-size: var(--fs-xl);
+}
+
+h4 {
+  font-size: var(--fs-lg);
+}
+
+h5, h6 {
+  font-size: var(--fs-base);
+}
+
+/* ========================================
+   PARAGRAPH & TEXT
+   ======================================== */
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-primary-500);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+a:hover {
+  color: var(--color-primary-600);
+}
+
+/* ========================================
+   MEDIA
+   ======================================== */
+
+img, picture, video, canvas, svg {
   display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0;
 }
