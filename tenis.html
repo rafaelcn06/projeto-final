@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calçados - Arena Fashion</title>
+  <title>Calçados - Arena Multimarcas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="aula_03.html" class="navbar__logo">Arena Fashion</a>
+      <a href="aula_03.html" class="navbar__logo">Arena Multimarcas</a>
       <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
@@ -28,11 +28,17 @@
       </button>
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Início</a></li>
+        <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas do Dia</a></li>
         <li class="navbar__item"><a href="departamento.html" class="navbar__link">Todas as Categorias</a></li>
         <li class="navbar__item"><a href="camisetas.html" class="navbar__link">Camisetas</a></li>
         <li class="navbar__item"><a href="calcas.html" class="navbar__link">Calças</a></li>
         <li class="navbar__item"><a href="tenis.html" class="navbar__link">Calçados</a></li>
       </ul>
+      <div class="navbar__actions">
+        <button class="navbar__button navbar__button--ghost" id="loginTrigger" type="button">Login</button>
+        <button class="navbar__cart navbar__button hide" id="cartButton" type="button" aria-label="Carrinho">🛒</button>
+        <span class="navbar__user-badge hide" id="userBadge"></span>
+      </div>
     </div>
   </nav>
 </header>
@@ -44,7 +50,7 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Tênis Casual"></div>
       <div class="card__content">
         <h3 class="card__title">Tênis Casual Confortável</h3>
-        <p class="card__description">Design confortável e moderno para o dia a dia. Palmilha anatomicamente desenvolvida para máximo conforto.</p>
+        <p class="card__description">Design confortável e moderno para o dia a dia.</p>
         <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Casual</span></div>
         <button class="card__button">R$ 149,90</button>
       </div>
@@ -53,7 +59,7 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&h=300&fit=crop" alt="Sapato Social"></div>
       <div class="card__content">
         <h3 class="card__title">Sapato Social Elegante</h3>
-        <p class="card__description">Sapato clássico e elegante, ideal para ambientes corporativos e eventos formais. Material premium importado.</p>
+        <p class="card__description">Material premium com acabamento impecável para ocasiões formais.</p>
         <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Formal</span></div>
         <button class="card__button">R$ 199,90</button>
       </div>
@@ -62,7 +68,7 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=300&fit=crop" alt="Tênis Esportivo"></div>
       <div class="card__content">
         <h3 class="card__title">Tênis Esportivo Premium</h3>
-        <p class="card__description">Desenvolvido para máximo desempenho nas atividades físicas. Tecnologia de amortecimento de última geração.</p>
+        <p class="card__description">Desenvolvido para máximo desempenho nas atividades físicas.</p>
         <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Esportivo</span></div>
         <button class="card__button">R$ 249,90</button>
       </div>
@@ -71,9 +77,27 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1462562692292-402355ad1389?w=400&h=300&fit=crop" alt="Sandália"></div>
       <div class="card__content">
         <h3 class="card__title">Sandália Confortável</h3>
-        <p class="card__description">Perfeita para clima quente e casual. Material respirável com suporte de arco plantar.</p>
+        <p class="card__description">Perfeita para clima quente com suporte de arco plantar.</p>
         <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Casual</span></div>
         <button class="card__button">R$ 89,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1543163521-46b539c55dd0?w=400&h=300&fit=crop" alt="Botina"></div>
+      <div class="card__content">
+        <h3 class="card__title">Botina Clássica</h3>
+        <p class="card__description">Estilo clássico e versátil, combina com qualquer look.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Premium</span></div>
+        <button class="card__button">R$ 179,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1461623613917-7f92e298e8d0?w=400&h=300&fit=crop" alt="Tênis Vintage"></div>
+      <div class="card__content">
+        <h3 class="card__title">Tênis Vintage Retrô</h3>
+        <p class="card__description">Design clássico dos anos 80 com tecnologia moderna de conforto.</p>
+        <div class="card__meta"><span class="card__category">Calçado</span><span class="card__level">Moda</span></div>
+        <button class="card__button">R$ 139,90</button>
       </div>
     </article>
   </div>
@@ -99,9 +123,25 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Fashion. Todos os direitos reservados.</p>
+    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Multimarcas. Todos os direitos reservados.</p>
   </div>
 </footer>
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeLoginModal" aria-label="Fechar">×</button>
+      <h2>Entrar no site</h2>
+      <form id="loginForm" class="form">
+        <label for="loginUser">Usuário</label>
+        <input type="text" id="loginUser" name="user" placeholder="admin ou cliente" required>
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" name="password" placeholder="admim ou cliente" required>
+        <button type="submit" class="card__button">Entrar</button>
+        <p class="form__help">Use senha <strong>admim</strong> para administrador ou <strong>cliente</strong> para cliente.</p>
+        <p id="loginError" class="form__error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camisetas - Arena Fashion</title>
+  <title>Camisetas - Arena Multimarcas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar__container">
-      <a href="aula_03.html" class="navbar__logo">Arena Fashion</a>
+      <a href="aula_03.html" class="navbar__logo">Arena Multimarcas</a>
       <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
@@ -28,11 +28,17 @@
       </button>
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Início</a></li>
+        <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas do Dia</a></li>
         <li class="navbar__item"><a href="departamento.html" class="navbar__link">Todas as Categorias</a></li>
         <li class="navbar__item"><a href="camisetas.html" class="navbar__link">Camisetas</a></li>
         <li class="navbar__item"><a href="calcas.html" class="navbar__link">Calças</a></li>
         <li class="navbar__item"><a href="tenis.html" class="navbar__link">Calçados</a></li>
       </ul>
+      <div class="navbar__actions">
+        <button class="navbar__button navbar__button--ghost" id="loginTrigger" type="button">Login</button>
+        <button class="navbar__cart navbar__button hide" id="cartButton" type="button" aria-label="Carrinho">🛒</button>
+        <span class="navbar__user-badge hide" id="userBadge"></span>
+      </div>
     </div>
   </nav>
 </header>
@@ -44,7 +50,7 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop" alt="Camiseta Básica"></div>
       <div class="card__content">
         <h3 class="card__title">Camiseta Básica</h3>
-        <p class="card__description">100% algodão, macia e confortável. Disponível em várias cores para combinar com seu estilo.</p>
+        <p class="card__description">100% algodão, macia e confortável. Disponível em várias cores.</p>
         <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Básico</span></div>
         <button class="card__button">R$ 49,90</button>
       </div>
@@ -53,7 +59,7 @@
       <div class="card__image"><img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop" alt="Camiseta Estampada"></div>
       <div class="card__content">
         <h3 class="card__title">Camiseta Estampada</h3>
-        <p class="card__description">Designs exclusivos e originais com estampas de alta qualidade que não desbotam.</p>
+        <p class="card__description">Designs exclusivos com estampas de alta qualidade que não desbotam.</p>
         <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Exclusivo</span></div>
         <button class="card__button">R$ 59,90</button>
       </div>
@@ -68,12 +74,30 @@
       </div>
     </article>
     <article class="card">
-      <div class="card__image"><img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&h=300&fit=crop" alt="Camiseta Premium"></div>
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop" alt="Camiseta Premium Gola V"></div>
       <div class="card__content">
         <h3 class="card__title">Camiseta Premium Gola V</h3>
-        <p class="card__description">Tecido de alta qualidade com acabamento premium. Confortável para uso do dia a dia.</p>
+        <p class="card__description">Tecido de alta qualidade com acabamento premium. Confortável para o dia a dia.</p>
         <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Premium</span></div>
         <button class="card__button">R$ 79,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop" alt="Camiseta Oversized"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Oversized Confortável</h3>
+        <p class="card__description">Corte amplo e moderno, perfeita para um look casual e descontraído.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Moda</span></div>
+        <button class="card__button">R$ 59,90</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card__image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop" alt="Camiseta Listrada"></div>
+      <div class="card__content">
+        <h3 class="card__title">Camiseta Listrada Clássica</h3>
+        <p class="card__description">Padrão listrado clássico em cores variadas. Versátil para qualquer estilo.</p>
+        <div class="card__meta"><span class="card__category">Camiseta</span><span class="card__level">Clássico</span></div>
+        <button class="card__button">R$ 44,90</button>
       </div>
     </article>
   </div>
@@ -99,9 +123,25 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Fashion. Todos os direitos reservados.</p>
+    <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Multimarcas. Todos os direitos reservados.</p>
   </div>
 </footer>
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeLoginModal" aria-label="Fechar">×</button>
+      <h2>Entrar no site</h2>
+      <form id="loginForm" class="form">
+        <label for="loginUser">Usuário</label>
+        <input type="text" id="loginUser" name="user" placeholder="admin ou cliente" required>
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" name="password" placeholder="admim ou cliente" required>
+        <button type="submit" class="card__button">Entrar</button>
+        <p class="form__help">Use senha <strong>admim</strong> para administrador ou <strong>cliente</strong> para cliente.</p>
+        <p id="loginError" class="form__error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 <script src="js/main.js"></script>
 </body>
 </html>

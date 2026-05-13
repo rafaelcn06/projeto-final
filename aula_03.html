@@ -36,11 +36,17 @@
 
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Início</a></li>
+        <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas do Dia</a></li>
         <li class="navbar__item"><a href="departamento.html" class="navbar__link">Todas as Categorias</a></li>
         <li class="navbar__item"><a href="camisetas.html" class="navbar__link">Camisetas</a></li>
         <li class="navbar__item"><a href="calcas.html" class="navbar__link">Calças</a></li>
         <li class="navbar__item"><a href="tenis.html" class="navbar__link">Calçados</a></li>
       </ul>
+      <div class="navbar__actions">
+        <button class="navbar__button navbar__button--ghost" id="loginTrigger" type="button">Login</button>
+        <button class="navbar__cart navbar__button hide" id="cartButton" type="button" aria-label="Carrinho">🛒</button>
+        <span class="navbar__user-badge hide" id="userBadge"></span>
+      </div>
     </div>
   </nav>
 </header>
@@ -50,19 +56,19 @@
     <h2 class="section__title">Coleção de Verão - Confira as Novidades</h2>
     <div class="cards-grid">
       
-      <!-- Card 1 - Featured -->
+      <!-- Banner Card - Ofertas -->
       <article class="card card--featured">
         <div class="card__image">
-          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop" alt="Camiseta Básica">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&h=600&fit=crop" alt="Ofertas do Dia">
         </div>
         <div class="card__content">
-          <h3 class="card__title">Camiseta Básica Premium</h3>
-          <p class="card__description">Tecido 100% algodão confortável, disponível em múltiplas cores. Perfeita para o dia a dia com estilo.</p>
+          <h3 class="card__title">Ofertas do Dia</h3>
+          <p class="card__description">Aproveite os melhores descontos em camisetas, calças e calçados. Clique e confira as ofertas imperdíveis.</p>
           <div class="card__meta">
-            <span class="card__category">Camiseta</span>
-            <span class="card__level">Promoção</span>
+            <span class="card__category">Promoção</span>
+            <span class="card__level">Descontos</span>
           </div>
-          <a href="camisetas.html" class="card__button">Ver Mais</a>
+          <a href="ofertas.html" class="card__button">Ver Ofertas</a>
         </div>
       </article>
 
@@ -168,6 +174,22 @@
   </div>
 </footer>
 
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeLoginModal" aria-label="Fechar">×</button>
+      <h2>Entrar no site</h2>
+      <form id="loginForm" class="form">
+        <label for="loginUser">Usuário</label>
+        <input type="text" id="loginUser" name="user" placeholder="admin ou cliente" required>
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" name="password" placeholder="admim ou cliente" required>
+        <button type="submit" class="card__button">Entrar</button>
+        <p class="form__help">Use senha <strong>admim</strong> para administrador ou <strong>cliente</strong> para cliente.</p>
+        <p id="loginError" class="form__error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -124,9 +124,116 @@
   outline: none;
 }
 
-/* ========================================
-   DESKTOP (>= 768px)
-   ======================================== */
+.navbar__actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.navbar__button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: var(--color-neutral-50);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.navbar__button:hover,
+.navbar__button:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary-500);
+}
+
+.navbar__button--active {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.navbar__cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.85rem;
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-50);
+  border: none;
+  font-size: 1.1rem;
+}
+
+.navbar__user-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-neutral-50);
+  font-size: 0.9rem;
+}
+
+.hide {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: calc(var(--z-sticky) + 10);
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__content {
+  position: relative;
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  width: min(520px, calc(100% - 2rem));
+  box-shadow: var(--shadow-xl);
+  z-index: 1;
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--color-neutral-900);
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-bottom: var(--space-md);
+}
+
+.form__help {
+  margin-top: var(--space-sm);
+  color: var(--color-neutral-600);
+  font-size: 0.95rem;
+}
+
+.form__error {
+  margin-top: var(--space-sm);
+  color: var(--color-danger-500);
+  font-size: 0.95rem;
+}
 
 @media (min-width: 768px) {
   .navbar__hamburger {
@@ -142,6 +249,11 @@
     gap: var(--space-lg);
     box-shadow: none;
     animation: none;
+    margin-right: auto;
+  }
+
+  .navbar__actions {
+    display: flex;
   }
 
   .navbar__item {
