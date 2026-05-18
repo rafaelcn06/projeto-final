@@ -10,7 +10,7 @@
 }
 
 .footer__container {
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -82,8 +82,8 @@
   position: absolute;
   left: -0.5rem;
   bottom: 0;
-  width: 3px;
-  height: 3px;
+  width: var(--dot-size);
+  height: var(--dot-size);
   background-color: var(--color-primary-500);
   border-radius: var(--radius-full);
   opacity: 0;
@@ -99,7 +99,7 @@
    ======================================== */
 
 .footer__bottom {
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   padding-top: var(--space-lg);
   text-align: center;

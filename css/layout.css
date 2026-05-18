@@ -1,5 +1,5 @@
 main {
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: auto;
   padding: var(--space-md);
 }
@@ -13,7 +13,7 @@ section {
    ======================================== */
 
 .main {
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   padding: var(--space-lg);
 }

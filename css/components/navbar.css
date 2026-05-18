@@ -15,7 +15,7 @@
 }
 
 .navbar__container {
-  max-width: 1200px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   padding: var(--space-md);
   display: flex;
@@ -114,7 +114,14 @@
   color: var(--color-neutral-50);
   text-decoration: none;
   transition: background-color var(--transition-normal);
-  border-left: 4px solid transparent;
+  border-left: var(--border-thick) solid transparent;
+  font-size: 1.15rem !important; /* Aumenta o texto (o padrão era 1rem) */
+  font-weight: 500;             /* Deixa a letra levemente mais encorpada */
+  letter-spacing: 0.5px;        /* Dá um leve espaço elegante entre as letras */
+}
+
+.navbar__sublink {
+  font-size: 1rem !important; /* Mantém o texto das subcategorias um pouco menor que o das categorias principais */
 }
 
 .navbar__link:hover,
@@ -131,7 +138,7 @@
 }
 
 .navbar__button {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--color-border-subtle);
   background: transparent;
   color: var(--color-neutral-50);
   padding: 0.7rem 1rem;
@@ -143,7 +150,7 @@
 
 .navbar__button:hover,
 .navbar__button:focus {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--color-surface-hover);
   border-color: var(--color-primary-500);
 }
 
@@ -169,8 +176,8 @@
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 0.85rem;
-  border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-muted);
   color: var(--color-neutral-50);
   font-size: 0.9rem;
 }
@@ -195,7 +202,7 @@
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-overlay);
 }
 
 .modal__content {
@@ -203,7 +210,7 @@
   background: var(--color-neutral-50);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  width: min(520px, calc(100% - 2rem));
+  width: min(var(--modal-max-width), calc(100% - var(--space-lg)));
   box-shadow: var(--shadow-xl);
   z-index: 1;
 }
@@ -263,12 +270,58 @@
   .navbar__link {
     padding: var(--space-sm) var(--space-md);
     border-left: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: var(--border-normal) solid transparent;
   }
 
   .navbar__link:hover,
   .navbar__link:focus {
     background-color: transparent;
     border-bottom-color: var(--color-primary-500);
+  }
+}
+
+
+/* ========================================
+   DROPDOWN MENU - ATUALIZADO PARA CLIQUE
+   ======================================== */
+
+.navbar__dropdown {
+  position: relative;
+}
+
+/* O submenu começa sempre escondido */
+.navbar__submenu {
+  display: none;
+  list-style: none;
+  background-color: var(--color-navbar-bg); /* Mantém o fundo escuro padrão */
+  z-index: 999;
+}
+
+/* Exibe o submenu apenas quando a classe .active for injetada pelo JavaScript */
+.navbar__dropdown.active .navbar__submenu {
+  display: block;
+}
+
+/* --- Ajuste Responsivo para Celular (Mobile) --- */
+@media (max-width: 767px) {
+  .navbar__submenu {
+    position: static; /* Faz com que as categorias empurrem o menu para baixo em vez de flutuar por cima */
+    width: 100%;
+    padding-left: var(--space-md); /* Dá um recuo visual elegante nas subcategorias */
+    box-shadow: none;
+    border-radius: 0;
+    background-color: var(--color-navbar-menu); /* Um tom levemente diferente para destacar no mobile */
+  }
+}
+
+/* --- Ajuste Responsivo para Computador (Desktop) --- */
+@media (min-width: 768px) {
+  .navbar__submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: var(--dropdown-min-width);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-dropdown);
   }
 }

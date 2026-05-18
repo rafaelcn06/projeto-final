@@ -1,0 +1,34 @@
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F9FAFB;
+  --color-text: #1F2937;
+  --color-text-light: #6B7280;
+  --color-text-lighter: #9CA3AF;
+  --color-border: #E5E7EB;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-surface-muted: rgba(255, 255, 255, 0.12);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+
+  --color-navbar-bg: var(--color-neutral-900);
+  --color-navbar-menu: var(--color-neutral-800);
+  --color-navbar-link: var(--color-neutral-50);
+  --color-navbar-link-hover: var(--color-neutral-700);
+  --color-border-subtle: rgba(255, 255, 255, 0.18);
+  --color-card-category: var(--color-primary-500);
+  --color-card-tag: var(--color-neutral-200);
+  --color-button-text: #FFFFFF;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #111827;
+  --color-bg-alt: #1F2937;
+  --color-text: #F9FAFB;
+  --color-text-light: #D1D5DB;
+  --color-text-lighter: #9CA3AF;
+  --color-border: #374151;
+  --color-shadow: rgba(255, 255, 255, 0.08);
+  --color-navbar-bg: var(--color-neutral-900);
+  --color-navbar-menu: var(--color-neutral-800);
+  --color-navbar-link: var(--color-neutral-50);
+}

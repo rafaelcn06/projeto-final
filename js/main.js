@@ -8,7 +8,7 @@ const hamburgerBtn = document.getElementById('hamburgerBtn');
 const navbarMenu = document.getElementById('navbarMenu');
 const navbarLinks = document.querySelectorAll('.navbar__link');
 
-// Toggle menu on hamburger click
+// Alterna o menu principal no clique do hambúrguer
 if (hamburgerBtn) {
   hamburgerBtn.addEventListener('click', () => {
     hamburgerBtn.classList.toggle('active');
@@ -16,21 +16,49 @@ if (hamburgerBtn) {
   });
 }
 
-// Close menu when clicking on a link
+// Fecha o menu hambúrguer ao clicar em um link comum (Ignora o menu de Categorias)
 navbarLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    hamburgerBtn.classList.remove('active');
-    navbarMenu.classList.remove('active');
+  link.addEventListener('click', (e) => {
+    // Se o link clicado estiver dentro do dropdown de categorias, não fecha o menu principal ainda
+    if (link.parentElement.classList.contains('navbar__dropdown')) {
+      return;
+    }
+    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+    if (navbarMenu) navbarMenu.classList.remove('active');
   });
 });
 
-// Close menu when pressing Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    hamburgerBtn.classList.remove('active');
-    navbarMenu.classList.remove('active');
+// ===== LOGICA EXCLUSIVA DO DROPDOWN DE CATEGORIAS AO CLICAR =====
+const dropdownItem = document.querySelector('.navbar__dropdown');
+if (dropdownItem) {
+  const dropdownLink = dropdownItem.querySelector('.navbar__link');
+  
+  if (dropdownLink) {
+    dropdownLink.addEventListener('click', (e) => {
+      e.preventDefault();   // Evita que a página role para o topo ou mude de endereço
+      e.stopPropagation();  // Evita que outros eventos interfiram no clique
+      dropdownItem.classList.toggle('active'); // Abre ou recolhe as categorias
+    });
+  }
+}
+
+// Fecha as categorias automaticamente se o usuário clicar em qualquer outro lugar fora do menu
+document.addEventListener('click', (e) => {
+  if (dropdownItem && !dropdownItem.contains(e.target)) {
+    dropdownItem.classList.remove('active');
   }
 });
+
+// Fecha tudo se o usuário apertar a tecla ESC do teclado
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+    if (navbarMenu) navbarMenu.classList.remove('active');
+    if (dropdownItem) dropdownItem.classList.remove('active');
+  }
+});
+
+// =========================================================================
 
 // ===== FOOTER - Auto Year Update =====
 

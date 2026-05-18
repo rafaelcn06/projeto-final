@@ -1,0 +1,74 @@
+:root {
+  /* ========================================
+     COLORS - Palette
+     ======================================== */
+  --color-primary-500: #2E75B6;
+  --color-primary-600: #1E5BA8;
+  --color-primary-700: #0F3F7F;
+
+  --color-secondary-500: #F39C12;
+  --color-secondary-600: #E67E22;
+  --color-secondary-700: #D35400;
+
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
+  --color-neutral-900: #111827;
+
+  --color-success-500: #10B981;
+  --color-danger-500: #EF4444;
+  --color-warning-500: #FBBF24;
+
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow-dark: rgba(0, 0, 0, 0.35);
+
+  /* ========================================
+     RADIUS & BORDERS
+     ======================================== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --border-thin: 1px;
+  --border-normal: 2px;
+  --border-thick: 4px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --shadow-dropdown: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  /* ========================================
+     LAYOUT
+     ======================================== */
+  --layout-max-width: 1200px;
+  --modal-max-width: 520px;
+  --card-image-height: 200px;
+  --form-max-width: 400px;
+  --dropdown-min-width: 220px;
+  --dot-size: 0.1875rem;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #111827;
+  --color-bg-alt: #1F2937;
+  --color-text: #F9FAFB;
+  --color-text-light: #D1D5DB;
+  --color-text-lighter: #9CA3AF;
+  --color-border: #374151;
+  --color-shadow: rgba(255, 255, 255, 0.08);
+}

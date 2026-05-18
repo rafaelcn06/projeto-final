@@ -1,0 +1,20 @@
+:root {
+  --ff-primary: 'Inter', sans-serif;
+  --ff-heading: 'Poppins', sans-serif;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --fs-3xl: 2.5rem;
+  --fs-2xl: 2rem;
+  --fs-xl: 1.5rem;
+  --fs-lg: 1.125rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.8;
+}

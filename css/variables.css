@@ -1,11 +1,5 @@
+@import "./tokens/main.css";
 :root {
-  /* ========================================
-     COLORS - Palette
-     ======================================== */
-  --color-primary-500: #2E75B6;
-  --color-primary-600: #1E5BA8;
-  --color-primary-700: #0F3F7F;
-  
   --color-secondary-500: #F39C12;
   --color-secondary-600: #E67E22;
   --color-secondary-700: #D35400;
