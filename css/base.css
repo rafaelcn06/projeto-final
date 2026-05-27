@@ -7,6 +7,12 @@ html {
   font-size: 16px;
 }
 
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body {
   font-family: var(--ff-primary);
   font-size: var(--fs-base);
@@ -89,6 +95,12 @@ button, input, select, textarea {
 
 button {
   cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
 /* ========================================

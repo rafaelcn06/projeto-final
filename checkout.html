@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena Multimarcas - Checkout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens/main.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/card.css">
+  <link rel="stylesheet" href="css/components/form.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="aula_03.html" class="navbar__logo">Arena Multimarcas</a>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+      <ul class="navbar__menu" id="navbarMenu">
+        <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Home</a></li>
+        <li class="navbar__item navbar__dropdown">
+          <a href="#" class="navbar__link">Categorias</a>
+          <ul class="navbar__submenu">
+            <li><a href="camisetas.html" class="navbar__sublink">Camisetas</a></li>
+            <li><a href="calcas.html" class="navbar__sublink">Calças</a></li>
+            <li><a href="tenis.html" class="navbar__sublink">Tênis</a></li>
+            <li><a href="relogios.html" class="navbar__sublink">Relógios</a></li>
+            <li><a href="mochilas.html" class="navbar__sublink">Mochilas</a></li>
+            <li><a href="departamento.html" class="navbar__sublink">Ver Todas</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="createAdBtn" class="navbar__button hide">Criar Anúncio</button>
+        <button id="loginTrigger" class="navbar__button">Login</button>
+        <button id="cartButton" class="navbar__cart hide" aria-label="Carrinho">🛒</button>
+        <span id="userBadge" class="navbar__user-badge hide">Visitante</span>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="main">
+  <section class="section checkout-page">
+    <h1 class="section__title">Finalizar compra</h1>
+    <div class="checkout-grid">
+      <aside class="checkout-summary">
+        <h2>Resumo do pedido</h2>
+        <div id="cartSummary"></div>
+        <div class="checkout-total">
+          <strong>Total:</strong> <span id="checkoutTotal">R$ 0,00</span>
+        </div>
+        <button type="button" id="clearCartBtn" class="card__button">Limpar carrinho</button>
+      </aside>
+
+      <section class="checkout-payment">
+        <h2>Escolha a forma de pagamento</h2>
+        <form id="paymentForm" class="form">
+          <div class="payment-methods">
+            <label><input type="radio" name="paymentMethod" value="cartao_credito" checked> Cartão de crédito</label>
+            <label><input type="radio" name="paymentMethod" value="cartao_debito"> Cartão de débito</label>
+          </div>
+
+          <fieldset class="payment-method-details active" data-method="cartao_credito">
+            <div class="form__group">
+              <label for="name-credit">Nome no cartão</label>
+              <input id="name-credit" name="name" type="text" placeholder="Nome completo" required>
+            </div>
+            <div class="form__group">
+              <label for="document-credit">CPF/CNPJ</label>
+              <input id="document-credit" name="document" type="text" placeholder="000.000.000-00" required>
+            </div>
+            <div class="form__group">
+              <label for="cardNumber">Número do cartão</label>
+              <input id="cardNumber" name="cardNumber" type="text" placeholder="0000 0000 0000 0000" required>
+            </div>
+            <div class="form__group">
+              <label for="expiry">Validade</label>
+              <input id="expiry" name="expiry" type="text" placeholder="MM/AA" required>
+            </div>
+            <div class="form__group">
+              <label for="cvv">CVV</label>
+              <input id="cvv" name="cvv" type="text" placeholder="123" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="payment-method-details" data-method="cartao_debito">
+            <div class="form__group">
+              <label for="name-debit">Nome no cartão</label>
+              <input id="name-debit" name="name" type="text" placeholder="Nome completo" required>
+            </div>
+            <div class="form__group">
+              <label for="document-debit">CPF/CNPJ</label>
+              <input id="document-debit" name="document" type="text" placeholder="000.000.000-00" required>
+            </div>
+            <div class="form__group">
+              <label for="cardNumberDebit">Número do cartão</label>
+              <input id="cardNumberDebit" name="cardNumber" type="text" placeholder="0000 0000 0000 0000" required>
+            </div>
+            <div class="form__group">
+              <label for="expiryDebit">Validade</label>
+              <input id="expiryDebit" name="expiry" type="text" placeholder="MM/AA" required>
+            </div>
+            <div class="form__group">
+              <label for="cvvDebit">CVV</label>
+              <input id="cvvDebit" name="cvv" type="text" placeholder="123" required>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="card__button">Confirmar pagamento</button>
+        </form>
+        <div id="paymentResult" class="payment-result"></div>
+      </section>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <p>Arena Multimarcas © 2026</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

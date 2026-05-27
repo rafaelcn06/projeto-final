@@ -128,13 +128,39 @@
 .navbar__link:focus {
   background-color: var(--color-neutral-700);
   border-left-color: var(--color-primary-500);
-  outline: none;
+}
+
+.navbar__link:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 2px;
 }
 
 .navbar__actions {
   display: none;
   align-items: center;
   gap: var(--space-sm);
+}
+
+@media (max-width: 767px) {
+  .navbar__container {
+    flex-wrap: wrap;
+  }
+
+  .navbar__actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .navbar__actions .navbar__button {
+    flex: 1;
+  }
+
+  .navbar__actions .navbar__cart {
+    width: auto;
+  }
 }
 
 .navbar__button {
@@ -228,12 +254,6 @@
 
 .modal h2 {
   margin-bottom: var(--space-md);
-}
-
-.form__help {
-  margin-top: var(--space-sm);
-  color: var(--color-neutral-600);
-  font-size: 0.95rem;
 }
 
 .form__error {
