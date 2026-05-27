@@ -1,10 +1,4 @@
-# 🛍️ Arena Fashion - Loja de Roupas
-
-## Projeto Completo - Exercício Aula 09 (Engenharia de Interface)
-
-### ✅ Status: CONCLUÍDO
-
----
+# 🛍️ Arena Multimarcas - Loja de Roupas
 
 ## 📁 Estrutura de Arquivos
 

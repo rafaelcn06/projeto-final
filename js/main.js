@@ -17,16 +17,15 @@ if (hamburgerBtn) {
 }
 
 // Fecha o menu hambúrguer ao clicar em um link comum (Ignora o menu de Categorias)
-navbarLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    // Se o link clicado estiver dentro do dropdown de categorias, não fecha o menu principal ainda
-    if (link.parentElement.classList.contains('navbar__dropdown')) {
-      return;
-    }
+if (navbarMenu) {
+  navbarMenu.addEventListener('click', (e) => {
+    const link = e.target.closest('.navbar__link');
+    if (!link) return;
+    if (link.closest('.navbar__dropdown')) return;
     if (hamburgerBtn) hamburgerBtn.classList.remove('active');
-    if (navbarMenu) navbarMenu.classList.remove('active');
+    navbarMenu.classList.remove('active');
   });
-});
+}
 
 // ===== LOGICA EXCLUSIVA DO DROPDOWN DE CATEGORIAS AO CLICAR =====
 const dropdownItem = document.querySelector('.navbar__dropdown');
@@ -135,7 +134,40 @@ function updateUserState() {
     if (createAdBtnEl) createAdBtnEl.classList.add('hide');
   }
 
+  updateNavbarMenu(currentUser);
   updateStaticCardActions();
+}
+
+function updateNavbarMenu(currentUser) {
+  const menu = document.getElementById('navbarMenu');
+  if (!menu) return;
+
+  const homeLinkItem = menu.querySelector('.navbar__link[href="aula_03.html"]')?.closest('li');
+  if (homeLinkItem) homeLinkItem.remove();
+
+  const ofertasItem = menu.querySelector('.navbar__link[href="ofertas.html"]')?.closest('li');
+  const categoryItem = menu.querySelector('.navbar__dropdown');
+
+  if (ofertasItem && categoryItem) {
+    menu.insertBefore(ofertasItem, menu.firstChild);
+    menu.insertBefore(categoryItem, ofertasItem.nextSibling);
+  }
+
+  const existingOrdersItem = menu.querySelector('.navbar__item--orders');
+  if (currentUser && currentUser.role === 'client') {
+    if (!existingOrdersItem) {
+      const ordersItem = document.createElement('li');
+      ordersItem.className = 'navbar__item navbar__item--orders';
+      ordersItem.innerHTML = '<a href="orders.html" class="navbar__link">Pedidos</a>';
+      if (categoryItem) {
+        menu.insertBefore(ordersItem, categoryItem.nextSibling);
+      } else {
+        menu.appendChild(ordersItem);
+      }
+    }
+  } else if (existingOrdersItem) {
+    existingOrdersItem.remove();
+  }
 }
 
 function openLoginModal() {
@@ -198,7 +230,7 @@ if (loginForm) {
       return;
     }
 
-    setStoredUser(userData);
+    setStoredUser({ username, role: userData.role, label: userData.label });
     updateUserState();
     closeLoginModalFunc();
   });
@@ -858,6 +890,29 @@ function setCart(cart) {
   sessionStorage.setItem('arenaCart', JSON.stringify(cart));
 }
 
+function getOrders() {
+  try {
+    return JSON.parse(localStorage.getItem('arenaOrders') || '[]');
+  } catch (err) {
+    return [];
+  }
+}
+
+function setOrders(orders) {
+  localStorage.setItem('arenaOrders', JSON.stringify(orders));
+}
+
+function addOrder(order) {
+  const orders = getOrders();
+  orders.push(order);
+  setOrders(orders);
+}
+
+function getOrdersForUser(username) {
+  if (!username) return [];
+  return getOrders().filter(order => order.user === username);
+}
+
 function getCartDetails() {
   const products = getProducts();
   return getCart()
@@ -881,12 +936,14 @@ function getCartTotal() {
 function renderCheckoutPage() {
   const cartSummary = document.getElementById('cartSummary');
   const checkoutTotal = document.getElementById('checkoutTotal');
+  const paymentResult = document.getElementById('paymentResult');
   if (!cartSummary || !checkoutTotal) return;
 
   const items = getCartDetails();
   if (!items.length) {
     cartSummary.innerHTML = '<p>Seu carrinho está vazio. Adicione produtos para iniciar o pagamento.</p>';
     checkoutTotal.textContent = 'R$ 0,00';
+    if (paymentResult) paymentResult.innerHTML = '';
     return;
   }
 
@@ -960,12 +1017,30 @@ function completePayment(method, data) {
     }
     product.stock = product.stock - item.qty;
   }
+  const currentUser = getStoredUser();
+  const orderId = Date.now().toString(36).toUpperCase();
+  const orderData = {
+    id: orderId,
+    user: currentUser?.username || 'cliente',
+    items: items.map(item => ({
+      id: item.id,
+      title: item.product.title,
+      qty: item.qty,
+      price: item.product.price,
+      subtotal: item.subtotal
+    })),
+    total: Number(getCartTotal()),
+    method,
+    status: 'pedido a caminho',
+    createdAt: new Date().toISOString()
+  };
+  addOrder(orderData);
+
   setProducts(products);
   setCart([]);
   renderCheckoutPage();
   renderProductsForCurrentPage();
 
-  const orderId = Date.now().toString(36).toUpperCase();
   const summary = {
     cartao_credito: 'Compra aprovada com cartão de crédito. O estoque foi atualizado e o pedido será processado.',
     cartao_debito: 'Compra aprovada com cartão de débito. O estoque foi atualizado e o pedido será processado.'
@@ -1055,6 +1130,68 @@ function handleCheckoutInteractions() {
   }
 }
 
+function renderOrdersPage() {
+  const ordersContainer = document.getElementById('ordersList');
+  if (!ordersContainer) return;
+
+  const currentUser = getStoredUser();
+  if (!currentUser || currentUser.role !== 'client') {
+    ordersContainer.innerHTML = '<p>Faça login como cliente para ver seus pedidos.</p>';
+    return;
+  }
+
+  const orders = getOrdersForUser(currentUser.username);
+  if (!orders.length) {
+    ordersContainer.innerHTML = '<p>Você ainda não tem pedidos.</p>';
+    return;
+  }
+
+  ordersContainer.innerHTML = `
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Pedido</th>
+          <th>Data</th>
+          <th>Status</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${orders.map(order => `
+          <tr>
+            <td>${order.id}</td>
+            <td>${new Date(order.createdAt).toLocaleString('pt-BR')}</td>
+            <td>${order.status}</td>
+            <td>R$ ${order.total.toFixed(2).replace('.', ',')}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+    ${orders.map(order => `
+      <section class="order-detail">
+        <h3>Detalhes do pedido ${order.id}</h3>
+        <p><strong>Status:</strong> ${order.status}</p>
+        <p><strong>Método:</strong> ${order.method === 'cartao_credito' ? 'Cartão de crédito' : 'Cartão de débito'}</p>
+        <table class="order-items-table">
+          <thead>
+            <tr><th>Produto</th><th>Qtd</th><th>Preço</th><th>Subtotal</th></tr>
+          </thead>
+          <tbody>
+            ${order.items.map(item => `
+              <tr>
+                <td>${item.title}</td>
+                <td>${item.qty}</td>
+                <td>R$ ${item.price.toFixed(2).replace('.', ',')}</td>
+                <td>R$ ${item.subtotal.toFixed(2).replace('.', ',')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </section>
+    `).join('')}
+  `;
+}
+
 function addToCart(productId) {
   const products = getProducts();
   const product = products.find(p => p.id === productId);
@@ -1084,5 +1221,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProductsForCurrentPage();
   updateUserState();
   renderCheckoutPage();
+  renderOrdersPage();
   handleCheckoutInteractions();
 });

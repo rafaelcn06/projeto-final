@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena Multimarcas - Pedidos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens/main.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/card.css">
+  <link rel="stylesheet" href="css/components/form.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="aula_03.html" class="navbar__logo">Arena Multimarcas</a>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+      <ul class="navbar__menu" id="navbarMenu">
+        <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Home</a></li>
+        <li class="navbar__item navbar__dropdown">
+          <a href="#" class="navbar__link">Categorias</a>
+          <ul class="navbar__submenu">
+            <li><a href="camisetas.html" class="navbar__sublink">Camisetas</a></li>
+            <li><a href="calcas.html" class="navbar__sublink">Calças</a></li>
+            <li><a href="tenis.html" class="navbar__sublink">Tênis</a></li>
+            <li><a href="relogios.html" class="navbar__sublink">Relógios</a></li>
+            <li><a href="mochilas.html" class="navbar__sublink">Mochilas</a></li>
+            <li><a href="departamento.html" class="navbar__sublink">Ver Todas</a></li>
+          </ul>
+        </li>
+        <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="createAdBtn" class="navbar__button hide">Criar Anúncio</button>
+        <button id="loginTrigger" class="navbar__button">Login</button>
+        <button id="cartButton" class="navbar__cart hide" aria-label="Carrinho">🛒</button>
+        <span id="userBadge" class="navbar__user-badge hide">Visitante</span>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="main">
+  <section class="section orders-page">
+    <div class="section__header">
+      <h1 class="section__title">Meus Pedidos</h1>
+      <p class="section__subtitle">Acompanhe seus pedidos aprovados e o histórico de compras.</p>
+    </div>
+    <div id="ordersList" class="orders-list">
+      <p>Carregando pedidos...</p>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__container">
+    <p>© Arena Multimarcas. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
