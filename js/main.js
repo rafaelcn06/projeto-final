@@ -273,284 +273,213 @@ function setProducts(arr) {
 
 function getInitialProducts() {
   return [
+    // ================== CAMISETAS ==================
     {
-      id: 'camiseta-basica',
-      title: 'Camiseta Básica',
-      description: '100% algodão, macia e confortável. Disponível em várias cores.',
+      id: 'camiseta-dryfit-pro',
+      title: 'Camiseta Dry Fit Pro',
+      description: 'Tecnologia de evaporação rápida de suor. Ideal para treinos intensos e corrida.',
       category: 'camisetas',
-      price: 49.9,
+      price: 69.90,
+      stock: 25,
+      image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'camiseta-algodao-egipcio',
+      title: 'Camiseta Algodão Egípcio',
+      description: 'Toque extremamente macio e caimento perfeito. O básico premium para o dia a dia.',
+      category: 'camisetas',
+      price: 119.90,
+      stock: 15,
+      image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'camiseta-longline-street',
+      title: 'Camiseta Longline Street',
+      description: 'Corte alongado com barra abaulada. Estilo urbano e despojado para qualquer rolê.',
+      category: 'camisetas',
+      price: 89.90,
+      stock: 12,
+      image: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'camiseta-henley-casual',
+      title: 'Camiseta Henley Casual',
+      description: 'Gola portuguesa com botões. Uma alternativa rústica e elegante à tradicional gola careca.',
+      category: 'camisetas',
+      price: 95.00,
       stock: 18,
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
+
+    // ================== CALÇAS ==================
     {
-      id: 'camiseta-estampada',
-      title: 'Camiseta Estampada',
-      description: 'Designs exclusivos com estampas de alta qualidade que não desbotam.',
-      category: 'camisetas',
-      price: 59.9,
-      stock: 14,
-      image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'camiseta-polo',
-      title: 'Camiseta Polo',
-      description: 'Estilo clássico e elegante, perfeita para ocasiões casuais e semi-formais.',
-      category: 'camisetas',
-      price: 69.9,
-      stock: 12,
-      image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'camiseta-premium-gola-v',
-      title: 'Camiseta Premium Gola V',
-      description: 'Tecido de alta qualidade com acabamento premium. Confortável para o dia a dia.',
-      category: 'camisetas',
-      price: 79.9,
-      stock: 9,
-      image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'camiseta-oversized',
-      title: 'Camiseta Oversized Confortável',
-      description: 'Corte amplo e moderno, perfeita para um look casual e descontraído.',
-      category: 'camisetas',
-      price: 59.9,
-      stock: 10,
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'camiseta-listrada',
-      title: 'Camiseta Listrada Clássica',
-      description: 'Padrão listrado clássico em cores variadas. Versátil para qualquer estilo.',
-      category: 'camisetas',
-      price: 44.9,
-      stock: 16,
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'calca-jeans-classica',
-      title: 'Calça Jeans Clássica',
-      description: 'Jeans de qualidade premium com corte tradicional. Confortável e durável.',
+      id: 'calca-jogger-sarja',
+      title: 'Calça Jogger de Sarja',
+      description: 'Conforto do moletom com o visual estruturado da sarja. Punhos elásticos nos tornozelos.',
       category: 'calcas',
-      price: 89.9,
+      price: 149.90,
       stock: 10,
-      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1624378439575-d170c6d44a11?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'calca-social-slim',
-      title: 'Calça Social Slim',
-      description: 'Corte slim fit moderno, perfeita para ambientes corporativos.',
+      id: 'calca-jeans-destroyed',
+      title: 'Calça Jeans Destroyed',
+      description: 'Lavagem estonada com rasgos rasgados a laser. Corte slim moderno.',
       category: 'calcas',
-      price: 119.9,
+      price: 179.90,
       stock: 8,
-      image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'calca-cargo',
-      title: 'Calça Cargo Aventureira',
-      description: 'Com múltiplos bolsos funcionais, ideal para quem busca praticidade.',
+      id: 'calca-moletom-sport',
+      title: 'Calça Moletom Sport',
+      description: 'Interior flanelado super quente. Possui bolsos com zíper para maior segurança.',
       category: 'calcas',
-      price: 99.9,
-      stock: 7,
-      image: 'https://images.unsplash.com/photo-1506629905607-0b5b8b5b2b5b?w=400&h=300&fit=crop',
+      price: 129.90,
+      stock: 20,
+      image: 'https://images.unsplash.com/photo-1584865288642-42078afe6942?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'legging-confortavel',
-      title: 'Legging Confortável',
-      description: 'Tecido elástico e respirável, perfeita para atividades físicas.',
+      id: 'calca-pantalona-linho',
+      title: 'Calça Pantalona em Linho',
+      description: 'Modelagem ampla e tecido respirável. Traz elegância imediata para climas quentes.',
       category: 'calcas',
-      price: 79.9,
-      stock: 13,
-      image: 'https://images.unsplash.com/photo-1541578527986-ccbb96293588?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'calca-flare-retro',
-      title: 'Calça Flare Retrô',
-      description: 'Corte flare moderno resgatando o estilo dos anos 70 com toque atual.',
-      category: 'calcas',
-      price: 109.9,
+      price: 199.90,
       stock: 6,
-      image: 'https://images.unsplash.com/photo-1488348057664-e62a68339b17?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+
+    // ================== TÊNIS ==================
+    {
+      id: 'tenis-running-aero',
+      title: 'Tênis Running Aero Pro',
+      description: 'Amortecimento responsivo de ponta a ponta. Extremamente leve e aerodinâmico.',
+      category: 'tenis',
+      price: 349.90,
+      stock: 15,
+      image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'calca-reta-conforto',
-      title: 'Calça Reta Conforto',
-      description: 'Corte reta clássico que combina com qualquer look. Confortável o dia todo.',
-      category: 'calcas',
-      price: 74.9,
+      id: 'tenis-slip-on-urban',
+      title: 'Tênis Slip On Urban',
+      description: 'Sem cadarços para praticidade máxima. Solado vulcanizado clássico.',
+      category: 'tenis',
+      price: 189.90,
+      stock: 22,
+      image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'tenis-basket-high',
+      title: 'Tênis Basket High Top',
+      description: 'Cano alto com suporte reforçado de tornozelo. Visual retro das quadras dos anos 90.',
+      category: 'tenis',
+      price: 429.90,
+      stock: 5,
+      image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'tenis-casual-white',
+      title: 'Tênis Casual White Core',
+      description: 'O clássico tênis branco de couro sintético. Combina desde a alfaiataria até o jeans.',
+      category: 'tenis',
+      price: 219.90,
       stock: 14,
-      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
+
+    // ================== RELÓGIOS ==================
     {
-      id: 'tenis-casual-confortavel',
-      title: 'Tênis Casual Confortável',
-      description: 'Design confortável e moderno para o dia a dia.',
-      category: 'tenis',
-      price: 149.9,
-      stock: 9,
-      image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'sapato-social-elegante',
-      title: 'Sapato Social Elegante',
-      description: 'Material premium com acabamento impecável para ocasiões formais.',
-      category: 'tenis',
-      price: 199.9,
-      stock: 5,
-      image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'tenis-esportivo-premium',
-      title: 'Tênis Esportivo Premium',
-      description: 'Desenvolvido para máximo desempenho nas atividades físicas.',
-      category: 'tenis',
-      price: 249.9,
+      id: 'relogio-cronografo-aco',
+      title: 'Relógio Cronógrafo em Aço',
+      description: 'Mecanismo suíço, vidro de safira e mostrador funcional completo.',
+      category: 'relogios',
+      price: 659.00,
       stock: 7,
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'sandalia-confortavel',
-      title: 'Sandália Confortável',
-      description: 'Perfeita para clima quente com suporte de arco plantar.',
-      category: 'tenis',
-      price: 89.9,
+      id: 'relogio-minimal-couro',
+      title: 'Relógio Minimalista Couro',
+      description: 'Mostrador limpo sem números e pulseira de couro genuíno. Elegância discreta.',
+      category: 'relogios',
+      price: 289.90,
       stock: 12,
-      image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'botina-classica',
-      title: 'Botina Clássica',
-      description: 'Estilo clássico e versátil, combina com qualquer look.',
-      category: 'tenis',
-      price: 179.9,
+      id: 'relogio-smart-fitness',
+      title: 'Smartwatch Fitness Ultra',
+      description: 'Monitoramento cardíaco, GPS embutido e bateria para 14 dias.',
+      category: 'relogios',
+      price: 899.00,
+      stock: 4,
+      image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=300&fit=crop',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'relogio-diver-ocean',
+      title: 'Relógio Diver Ocean Pro',
+      description: 'Resistência à água de 300m e catraca rotativa bidirecional. Feito para exploração.',
+      category: 'relogios',
+      price: 749.50,
       stock: 6,
-      image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
+
+    // ================== MOCHILAS ==================
     {
-      id: 'tenis-vintage-retro',
-      title: 'Tênis Vintage Retrô',
-      description: 'Design clássico dos anos 80 com tecnologia moderna de conforto.',
-      category: 'tenis',
-      price: 139.9,
+      id: 'mochila-fotografica-tech',
+      title: 'Mochila Fotográfica Tech',
+      description: 'Divisórias acolchoadas ajustáveis e acesso rápido lateral para câmeras e lentes.',
+      category: 'mochilas',
+      price: 329.90,
       stock: 8,
-      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'relogio-esportivo',
-      title: 'Relógio Esportivo',
-      description: 'Resistente à água e com funções avançadas para atividades físicas.',
-      category: 'relogios',
-      price: 299.9,
-      stock: 10,
-      image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'relogio-classico',
-      title: 'Relógio Clássico',
-      description: 'Design atemporal e elegante, perfeito para ocasiões formais.',
-      category: 'relogios',
-      price: 399.9,
+      id: 'mochila-couro-vintage',
+      title: 'Mochila Couro Vintage',
+      description: 'Couro tratado com aspecto envelhecido. Ferragens em latão rústico.',
+      category: 'mochilas',
+      price: 459.00,
       stock: 5,
-      image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'relogio-digital',
-      title: 'Relógio Digital',
-      description: 'Moderno e funcional com display digital de fácil leitura.',
-      category: 'relogios',
-      price: 199.9,
+      id: 'mochila-trekking-50l',
+      title: 'Mochila Trekking 50L',
+      description: 'Estrutura ergonômica de alumínio e capa de chuva integrada. Ideal para trilhas longas.',
+      category: 'mochilas',
+      price: 389.90,
       stock: 11,
-      image: 'https://images.unsplash.com/photo-1488348057664-e62a68339b17?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     },
     {
-      id: 'smartwatch-inteligente',
-      title: 'Smartwatch Inteligente',
-      description: 'Relógio inteligente com notificações e monitoramento de saúde.',
-      category: 'relogios',
-      price: 599.9,
-      stock: 4,
-      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'relogio-vintage',
-      title: 'Relógio Vintage',
-      description: 'Design retrô com mecanismo clássico de qualidade excepcional.',
-      category: 'relogios',
-      price: 349.9,
-      stock: 6,
-      image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'mochila-escolar',
-      title: 'Mochila Escolar',
-      description: 'Mochila resistente e espaçosa, perfeita para estudantes.',
+      id: 'mochila-notebook-impermeavel',
+      title: 'Mochila Notebook Anti-Furto',
+      description: 'Zíperes embutidos ocultos, material impermeável e porta USB externa.',
       category: 'mochilas',
-      price: 89.9,
-      stock: 13,
-      image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'mochila-viagem',
-      title: 'Mochila de Viagem',
-      description: 'Ideal para viagens, com capacidade ampla e design ergonômico.',
-      category: 'mochilas',
-      price: 129.9,
-      stock: 7,
-      image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'mochila-executiva',
-      title: 'Mochila Executiva',
-      description: 'Design profissional e elegante para ambientes corporativos.',
-      category: 'mochilas',
-      price: 149.9,
-      stock: 4,
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'bolsa-tote-moderna',
-      title: 'Bolsa Tote Moderna',
-      description: 'Estilo casual e versátil, combinável com qualquer look.',
-      category: 'mochilas',
-      price: 109.9,
-      stock: 8,
-      image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&h=300&fit=crop',
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'mochila-esportiva',
-      title: 'Mochila Esportiva',
-      description: 'Perfeita para academia e atividades ao ar livre.',
-      category: 'mochilas',
-      price: 99.9,
-      stock: 12,
-      image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop',
+      price: 249.90,
+      stock: 25,
+      image: 'https://images.unsplash.com/photo-1554342872-034a06541bad?w=400&h=300&fit=crop',
       createdAt: new Date().toISOString()
     }
   ];
@@ -976,10 +905,37 @@ function renderCheckoutPage() {
 }
 
 function updatePaymentDetails() {
-  const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked');
-  document.querySelectorAll('.payment-method-details').forEach(block => {
-    block.classList.toggle('active', block.dataset.method === selectedMethod?.value);
-  });
+  // 1. Descobre qual método está selecionado usando os values reais do HTML
+  const checkedRadio = document.querySelector('input[name="paymentMethod"]:checked');
+  if (!checkedRadio) return;
+  const selectedMethod = checkedRadio.value; // Será 'cartao_credito' ou 'cartao_debito'
+
+  // 2. Captura os blocos usando o data-method que você colocou no HTML
+  const secaoCredito = document.querySelector('fieldset[data-method="cartao_credito"]');
+  const secaoDebito = document.querySelector('fieldset[data-method="cartao_debito"]');
+
+  if (!secaoCredito || !secaoDebito) return;
+
+  // 3. Captura os inputs de cada bloco
+  const inputsCredito = secaoCredito.querySelectorAll('input, select');
+  const inputsDebito = secaoDebito.querySelectorAll('input, select');
+
+  if (selectedMethod === 'cartao_credito') {
+    secaoCredito.classList.add('active');
+    secaoDebito.classList.remove('active');
+
+    // Habilita crédito e desabilita débito
+    inputsCredito.forEach(input => input.disabled = false);
+    inputsDebito.forEach(input => input.disabled = true);
+
+  } else if (selectedMethod === 'cartao_debito') {
+    secaoDebito.classList.add('active');
+    secaoCredito.classList.remove('active');
+
+    // Desabilita crédito e habilita débito
+    inputsCredito.forEach(input => input.disabled = true);
+    inputsDebito.forEach(input => input.disabled = false);
+  }
 }
 
 function setPaymentMessage(html) {
@@ -1059,58 +1015,113 @@ function completePayment(method, data) {
 
 function handleCheckoutSubmit(event) {
   event.preventDefault();
-  const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked');
-  if (!selectedMethod) {
-    alert('Selecione uma forma de pagamento.');
+
+  const currentUser = getStoredUser();
+  if (!currentUser) {
+    alert('Você precisa estar logado como cliente para finalizar uma compra.');
     return;
   }
 
-  const method = selectedMethod.value;
-  const activeDetails = document.querySelector(`.payment-method-details[data-method="${method}"]`);
-  if (!activeDetails) {
-    alert('Ocorreu um erro ao identificar a forma de pagamento.');
+  const cart = JSON.parse(localStorage.getItem('arenaCart') || '[]');
+  if (cart.length === 0) {
+    alert('Seu carrinho está vazio.');
     return;
   }
 
-  const holder = activeDetails.querySelector('input[name="name"]')?.value.trim();
-  const documentField = activeDetails.querySelector('input[name="document"]')?.value.trim();
+  const products = JSON.parse(localStorage.getItem('arenaProducts') || '[]');
 
-  if (!holder) {
-    alert('Informe o nome do portador.');
-    return;
-  }
-
-  if (!documentField) {
-    alert('Informe o CPF/CNPJ.');
-    return;
-  }
-
-  if (method === 'cartao_credito' || method === 'cartao_debito') {
-    const cardNumber = activeDetails.querySelector('input[name="cardNumber"]')?.value.replace(/\s/g, '');
-    const expiry = activeDetails.querySelector('input[name="expiry"]')?.value.trim();
-    const cvv = activeDetails.querySelector('input[name="cvv"]')?.value.trim();
-
-    if (!cardNumber || cardNumber.length < 12) {
-      alert('Informe um número de cartão válido.');
-      return;
+  // ==========================================
+  // VALIDAÇÃO E ATUALIZAÇÃO DE ESTOQUE
+  // ==========================================
+  let estoqueDisponivel = true;
+  cart.forEach(item => {
+    const prod = products.find(p => p.id === item.id);
+    if (!prod || prod.stock < item.qty) {
+      estoqueDisponivel = false;
+      alert(`Estoque insuficiente para o produto: ${prod ? prod.title : 'Desconhecido'}`);
     }
-    if (!expiry) {
-      alert('Informe a validade do cartão.');
-      return;
-    }
-    if (!cvv || cvv.length < 3) {
-      alert('Informe o código de segurança do cartão.');
-      return;
-    }
+  });
+
+  if (!estoqueDisponivel) return;
+
+  // Deduz o estoque
+  cart.forEach(item => {
+    const prod = products.find(p => p.id === item.id);
+    if (prod) prod.stock -= item.qty;
+  });
+  localStorage.setItem('arenaProducts', JSON.stringify(products));
+
+  // ==========================================
+  // GERAÇÃO DO PEDIDO
+  // ==========================================
+  let orderTotal = 0;
+  const orderItems = cart.map(item => {
+    const prod = products.find(p => p.id === item.id);
+    const price = prod ? Number(prod.price) : 0;
+    const subtotal = price * item.qty;
+    orderTotal += subtotal;
+
+    return {
+      id: item.id,
+      title: prod ? prod.title : 'Produto Arena',
+      qty: item.qty,
+      price: price,
+      subtotal: subtotal
+    };
+  });
+
+  // Lê exatamente o valor selecionado no HTML ('cartao_credito' ou 'cartao_debito')
+  const selectedMethodRadio = document.querySelector('input[name="paymentMethod"]:checked');
+  const orderMethod = selectedMethodRadio ? selectedMethodRadio.value : 'cartao_credito';
+
+  const newOrder = {
+    id: 'PED-' + Math.floor(100000 + Math.random() * 900000),
+    username: currentUser.username,
+    createdAt: new Date().toISOString(),
+    status: 'Aprovado',
+    total: orderTotal,
+    method: orderMethod,
+    items: orderItems
+  };
+
+  const totalOrders = JSON.parse(localStorage.getItem('arenaOrders') || '[]');
+  totalOrders.push(newOrder);
+  localStorage.setItem('arenaOrders', JSON.stringify(totalOrders));
+
+  // ==========================================
+  // MENSAGEM E REDIRECIONAMENTO
+  // ==========================================
+  if (typeof clearCart === 'function') {
+    clearCart();
+  } else {
+    localStorage.removeItem('arenaCart');
   }
 
-  completePayment(method, { holder, document: documentField });
+  const paymentResult = document.getElementById('paymentResult');
+  if (paymentResult) {
+    paymentResult.innerHTML = `
+      <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-md); text-align: center; font-weight: var(--fw-bold);">
+        🎉 Pagamento Confirmado! Seu pedido foi gerado e o estoque atualizado.
+      </div>
+    `;
+  }
+
+  // Redireciona para o histórico de pedidos
+  setTimeout(() => {
+    window.location.href = 'orders.html';
+  }, 2500);
 }
 
 function handleCheckoutInteractions() {
+  // 1. Escuta a troca dos botões de rádio (Crédito / Débito) e arruma a tela
   const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
-  paymentRadios.forEach(radio => radio.addEventListener('change', updatePaymentDetails));
+  if (paymentRadios.length > 0) {
+    paymentRadios.forEach(radio => radio.addEventListener('change', updatePaymentDetails));
+    // Chama uma vez para desabilitar o campo oculto assim que a página abre
+    updatePaymentDetails();
+  }
 
+  // 2. Escuta os cliques para remover itens individuais do carrinho
   document.addEventListener('click', (event) => {
     const removeBtn = event.target.closest('.cart-remove');
     if (removeBtn) {
@@ -1118,15 +1129,16 @@ function handleCheckoutInteractions() {
     }
   });
 
+  // 3. Escuta o botão de esvaziar o carrinho inteiro
   const clearCartBtn = document.getElementById('clearCartBtn');
   if (clearCartBtn) {
     clearCartBtn.addEventListener('click', clearCart);
   }
 
+  // 4. Escuta o botão final de "Confirmar pagamento"
   const paymentForm = document.getElementById('paymentForm');
   if (paymentForm) {
     paymentForm.addEventListener('submit', handleCheckoutSubmit);
-    updatePaymentDetails();
   }
 }
 
@@ -1215,12 +1227,159 @@ function addToCart(productId) {
   alert('Produto adicionado ao carrinho.');
 }
 
-// On load, render according to current page
+// ==========================================================================
+// 1. INICIALIZAÇÃO DA PÁGINA (On Load)
+// ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   hydrateStaticCards();
   renderProductsForCurrentPage();
   updateUserState();
   renderCheckoutPage();
   renderOrdersPage();
-  handleCheckoutInteractions();
+  updatePaymentDetails(); // Garante que a tela de pagamento carregue certa
 });
+
+
+// ==========================================================================
+// 2. DELEGAÇÃO DE EVENTOS GLOBAL (Ouvintes Permanentes)
+// ==========================================================================
+document.addEventListener('change', function(event) {
+  // Se o elemento que mudou for o Radio de Pagamento, atualiza a tela
+  if (event.target && event.target.name === 'paymentMethod') {
+    updatePaymentDetails();
+  }
+});
+
+document.addEventListener('submit', function(event) {
+  // Se o formulário enviado for o do Checkout, intercepta e salva o pedido
+  if (event.target && event.target.id === 'paymentForm') {
+    event.preventDefault(); // Trava o recarregamento na raiz imediatamente
+    handleCheckoutSubmit(event);
+  }
+});
+
+
+// ==========================================================================
+// 3. FUNÇÃO DE INTERFACE (Evidente / Oculto)
+// ==========================================================================
+function updatePaymentDetails() {
+  const form = document.getElementById('paymentForm');
+  if (!form) return;
+
+  const checkedRadio = form.querySelector('input[name="paymentMethod"]:checked');
+  const selectedMethod = checkedRadio ? checkedRadio.value : 'cartao_credito';
+
+  const secaoCredito = form.querySelector('fieldset[data-method="cartao_credito"]');
+  const secaoDebito = form.querySelector('fieldset[data-method="cartao_debito"]');
+
+  if (secaoCredito && secaoDebito) {
+    const inputsCredito = secaoCredito.querySelectorAll('input, select');
+    const inputsDebito = secaoDebito.querySelectorAll('input, select');
+
+    if (selectedMethod === 'cartao_credito') {
+      secaoCredito.classList.add('active');
+      secaoDebito.classList.remove('active');
+      inputsCredito.forEach(i => i.disabled = false);
+      inputsDebito.forEach(i => i.disabled = true);
+    } else {
+      secaoDebito.classList.add('active');
+      secaoCredito.classList.remove('active');
+      inputsCredito.forEach(i => i.disabled = true);
+      inputsDebito.forEach(i => i.disabled = false);
+    }
+  }
+}
+
+
+// ==========================================================================
+// 4. FUNÇÃO DE REGRA DE NEGÓCIO (Persistência de Pedido e Estoque)
+// ==========================================================================
+function handleCheckoutSubmit(event) {
+  if (event) event.preventDefault(); 
+
+  const currentUser = typeof getStoredUser === 'function' ? getStoredUser() : null;
+  if (!currentUser) {
+    alert('Você precisa estar logado como cliente para finalizar uma compra.');
+    return;
+  }
+
+  // CORREÇÃO: Agora usa getCart() para buscar do lugar certo (sessionStorage)
+  const cart = typeof getCart === 'function' ? getCart() : [];
+  if (cart.length === 0) {
+    alert('Seu carrinho está vazio.');
+    return;
+  }
+
+  const products = JSON.parse(localStorage.getItem('arenaProducts') || '[]');
+
+  // Validação de Estoque
+  let estoqueDisponivel = true;
+  cart.forEach(item => {
+    const prod = products.find(p => p.id === item.id);
+    if (!prod || prod.stock < item.qty) {
+      estoqueDisponivel = false;
+      alert(`Estoque insuficiente para o produto: ${prod ? prod.title : 'Desconhecido'}`);
+    }
+  });
+
+  if (!estoqueDisponivel) return;
+
+  // Deduz o estoque
+  cart.forEach(item => {
+    const prod = products.find(p => p.id === item.id);
+    if (prod) prod.stock -= item.qty;
+  });
+  localStorage.setItem('arenaProducts', JSON.stringify(products));
+
+  // Geração do Pedido
+  let orderTotal = 0;
+  const orderItems = cart.map(item => {
+    const prod = products.find(p => p.id === item.id);
+    const price = prod ? Number(prod.price) : 0;
+    const subtotal = price * item.qty;
+    orderTotal += subtotal;
+
+    return {
+      id: item.id,
+      title: prod ? prod.title : 'Produto Arena',
+      qty: item.qty,
+      price: price,
+      subtotal: subtotal
+    };
+  });
+
+  const selectedMethodRadio = document.querySelector('input[name="paymentMethod"]:checked');
+  const orderMethod = selectedMethodRadio ? selectedMethodRadio.value : 'cartao_credito';
+
+  const newOrder = {
+    id: 'PED-' + Math.floor(100000 + Math.random() * 900000),
+    username: currentUser.username || currentUser.label,
+    createdAt: new Date().toISOString(),
+    status: 'Aprovado',
+    total: orderTotal,
+    method: orderMethod,
+    items: orderItems
+  };
+
+  const totalOrders = JSON.parse(localStorage.getItem('arenaOrders') || '[]');
+  totalOrders.push(newOrder);
+  localStorage.setItem('arenaOrders', JSON.stringify(totalOrders));
+
+  // Limpeza e Redirecionamento
+  if (typeof clearCart === 'function') {
+    clearCart(); // Esta função já limpa o sessionStorage e atualiza a tela
+  }
+
+  const paymentResult = document.getElementById('paymentResult');
+  if (paymentResult) {
+    paymentResult.innerHTML = `
+      <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: var(--space-sm); border-radius: var(--radius-md); margin-top: var(--space-md); text-align: center; font-weight: var(--fw-bold);">
+        🎉 Pagamento Confirmado! Seu pedido foi gerado e o estoque atualizado. Redirecionando...
+      </div>
+    `;
+  }
+
+  setTimeout(() => {
+    window.location.href = 'orders.html';
+  }, 2500);
+}

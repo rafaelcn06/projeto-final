@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arena Multimarcas - Loja de Roupas</title>
+  <title>Arena Multimarcas - Início</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-  <!-- CSS na ordem ITCSS -->
   <link rel="stylesheet" href="css/tokens/main.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
@@ -20,24 +18,59 @@
   <link rel="stylesheet" href="css/components/form.css">
   <link rel="stylesheet" href="css/components/footer.css">
   <link rel="stylesheet" href="css/utilities.css">
-</head>
 
+  <style>
+    /* Estilos base para os Modais */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal--open {
+      display: flex;
+    }
+    .modal__backdrop {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--color-overlay, rgba(0,0,0,0.6));
+    }
+    .modal__content {
+      position: relative;
+      background: var(--color-bg, #fff);
+      padding: var(--space-lg);
+      border-radius: var(--radius-md);
+      width: 100%;
+      max-width: var(--modal-max-width, 400px);
+      z-index: 1000;
+    }
+    .modal__close {
+      position: absolute;
+      top: var(--space-sm); right: var(--space-sm);
+      background: transparent; border: none; font-size: var(--fs-lg);
+    }
+    .error-msg {
+      color: var(--color-danger-500);
+      font-size: var(--fs-sm);
+      margin-bottom: var(--space-sm);
+    }
+  </style>
+</head>
 <body>
 
 <header class="header">
   <nav class="navbar">
     <div class="navbar__container">
       <a href="aula_03.html" class="navbar__logo">Arena Multimarcas</a>
-      
       <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
       </button>
-      
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Home</a></li>
-        
         <li class="navbar__item navbar__dropdown">
           <a href="#" class="navbar__link">Categorias</a>
           <ul class="navbar__submenu">
@@ -49,7 +82,6 @@
             <li><a href="departamento.html" class="navbar__sublink">Ver Todas</a></li>
           </ul>
         </li>
-        
         <li class="navbar__item"><a href="ofertas.html" class="navbar__link">Ofertas</a></li>
       </ul>
       <div class="navbar__actions">
@@ -64,183 +96,84 @@
 
 <main class="main">
   <section class="section">
-    <h2 class="section__title">Coleção de Verão - Confira as Novidades</h2>
-    <div class="cards-grid">
-      
-      <!-- Banner Card - Ofertas -->
-      <article class="card card--featured">
-        <div class="card__image">
-          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&h=600&fit=crop" alt="Ofertas do Dia">
-        </div>
-        <div class="card__content">
-          <h3 class="card__title">Ofertas do Dia</h3>
-          <p class="card__description">Aproveite os melhores descontos em camisetas, calças e calçados. Clique e confira as ofertas imperdíveis.</p>
-          <div class="card__meta">
-            <span class="card__category">Promoção</span>
-            <span class="card__level">Descontos</span>
-          </div>
-          <a href="ofertas.html" class="card__button">Ver Ofertas</a>
-        </div>
-      </article>
+    <h1 class="section__title">Destaques da Arena</h1>
+    
+    <div class="cards-grid"></div>
 
-      <!-- Card 2 -->
-      <article class="card">
-        <div class="card__image">
-          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop" alt="Calça Jeans">
-        </div>
-        <div class="card__content">
-          <h3 class="card__title">Calça Jeans Clássica</h3>
-          <p class="card__description">Jeans de qualidade premium com corte moderno. Confortável e versátil para qualquer ocasião.</p>
-          <div class="card__meta">
-            <span class="card__category">Calça</span>
-            <span class="card__level">Novidade</span>
-          </div>
-          <a href="calcas.html" class="card__button">Ver Mais</a>
-        </div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="card">
-        <div class="card__image">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Tênis Casual">
-        </div>
-        <div class="card__content">
-          <h3 class="card__title">Tênis Casual Confortável</h3>
-          <p class="card__description">Design contemporâneo e confortável. Ideal para usar com jeans ou shorts no seu dia a dia.</p>
-          <div class="card__meta">
-            <span class="card__category">Calçado</span>
-            <span class="card__level">Popular</span>
-          </div>
-          <a href="tenis.html" class="card__button">Ver Mais</a>
-        </div>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="card">
-        <div class="card__image">
-          <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&h=300&fit=crop" alt="Camiseta Estampada">
-        </div>
-        <div class="card__content">
-          <h3 class="card__title">Camiseta Estampada Exclusiva</h3>
-          <p class="card__description">Designs exclusivos e originais. Estampas de alta qualidade que não desbotam com o tempo.</p>
-          <div class="card__meta">
-            <span class="card__category">Camiseta</span>
-            <span class="card__level">Exclusivo</span>
-          </div>
-          <a href="camisetas.html" class="card__button">Ver Mais</a>
-        </div>
-      </article>
-
-    </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="footer__container">
-    <div class="footer__column">
-      <h4 class="footer__title">Sobre</h4>
-      <ul class="footer__list">
-        <li><a href="#" class="footer__link">Sobre Nós</a></li>
-        <li><a href="#" class="footer__link">Nossa Missão</a></li>
-        <li><a href="#" class="footer__link">Carreiras</a></li>
-        <li><a href="#" class="footer__link">Blog</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__column">
-      <h4 class="footer__title">Produtos</h4>
-      <ul class="footer__list">
-        <li><a href="#" class="footer__link">Categorias</a></li>
-        <li><a href="#" class="footer__link">Novidades</a></li>
-        <li><a href="#" class="footer__link">Promoções</a></li>
-        <li><a href="#" class="footer__link">Ofertas</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__column">
-      <h4 class="footer__title">Suporte</h4>
-      <ul class="footer__list">
-        <li><a href="#" class="footer__link">Contato</a></li>
-        <li><a href="#" class="footer__link">FAQ</a></li>
-        <li><a href="#" class="footer__link">Rastreamento</a></li>
-        <li><a href="#" class="footer__link">Devoluções</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__column">
-      <h4 class="footer__title">Legal</h4>
-      <ul class="footer__list">
-        <li><a href="#" class="footer__link">Privacidade</a></li>
-        <li><a href="#" class="footer__link">Termos</a></li>
-        <li><a href="#" class="footer__link">Cookies</a></li>
-        <li><a href="#" class="footer__link">Sitemap</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer__bottom">
-    <p class="footer__copyright">
-      © <span id="footerYear">2026</span> Arena Multimarcas. Todos os direitos reservados.
-    </p>
+  <div class="footer__inner">
+    <p>Arena Multimarcas © <span id="footerYear"></span></p>
   </div>
 </footer>
 
-  <div class="modal" id="loginModal" aria-hidden="true">
-    <div class="modal__backdrop" id="modalBackdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="closeLoginModal" aria-label="Fechar">×</button>
-      <h2>Entrar no site</h2>
-      <form id="loginForm" class="form">
-        <label for="loginUser">Usuário</label>
-        <input type="text" id="loginUser" name="user" placeholder="admin ou cliente" required>
+<div id="loginModal" class="modal" aria-hidden="true">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button id="closeLoginModal" class="modal__close">✖</button>
+    <h2>Fazer Login</h2>
+    <div id="loginError" class="error-msg"></div>
+    <form id="loginForm" class="form">
+      <div class="form__group">
+        <label for="loginUser">Usuário (cliente ou admin)</label>
+        <input type="text" id="loginUser" required>
+      </div>
+      <div class="form__group">
         <label for="loginPassword">Senha</label>
-        <input type="password" id="loginPassword" name="password" placeholder="admin ou cliente" required>
-        <button type="submit" class="card__button">Entrar</button>
-        <p id="loginError" class="form__error" aria-live="polite"></p>
-      </form>
-    </div>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit" class="card__button u-margin-top">Entrar</button>
+    </form>
   </div>
+</div>
 
-  <div class="modal" id="createAdModal" aria-hidden="true">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="closeCreateAdModal" aria-label="Fechar">×</button>
-      <h2>Criar Anúncio</h2>
-      <form id="createAdForm" class="form">
-        <label for="adTitle">Título</label>
-        <input type="text" id="adTitle" name="title" required>
-
-        <label for="adDescription">Descrição</label>
-        <textarea id="adDescription" name="description" rows="3" required></textarea>
-
-        <label for="adCategory">Categoria</label>
-        <select id="adCategory" name="category" required>
+<div id="createAdModal" class="modal" aria-hidden="true">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button id="closeCreateAdModal" class="modal__close">✖</button>
+    <h2>Criar Novo Anúncio</h2>
+    <div id="createAdError" class="error-msg"></div>
+    <form id="createAdForm" class="form">
+      <div class="form__group">
+        <label>Título do Produto</label>
+        <input type="text" name="title" required>
+      </div>
+      <div class="form__group">
+        <label>Descrição</label>
+        <textarea name="description" rows="2" required></textarea>
+      </div>
+      <div class="form__group">
+        <label>Categoria</label>
+        <select name="category" required>
           <option value="camisetas">Camisetas</option>
           <option value="calcas">Calças</option>
           <option value="tenis">Tênis</option>
           <option value="relogios">Relógios</option>
           <option value="mochilas">Mochilas</option>
-          <option value="ofertas">Ofertas</option>
-          <option value="departamento">Departamento</option>
         </select>
-
-        <label for="adPrice">Preço (R$)</label>
-        <input type="number" id="adPrice" name="price" min="0" step="0.01" required>
-
-        <label for="adStock">Estoque</label>
-        <input type="number" id="adStock" name="stock" min="0" step="1" required>
-
-        <label for="adImageUrl">Link da imagem</label>
-        <input type="url" id="adImageUrl" name="imageUrl" placeholder="https://...">
-
-        <label for="adImageFile">Ou anexar imagem (.jpg, .png)</label>
-        <input type="file" id="adImageFile" name="imageFile" accept="image/*">
-
-        <button type="submit" class="card__button">Criar anúncio</button>
-        <p id="createAdError" class="form__error" aria-live="polite"></p>
-      </form>
-    </div>
+      </div>
+      <div class="form__group">
+        <label>Preço (R$)</label>
+        <input type="number" name="price" step="0.01" required>
+      </div>
+      <div class="form__group">
+        <label>Estoque Inicial</label>
+        <input type="number" name="stock" required>
+      </div>
+      <div class="form__group">
+        <label>URL da Imagem</label>
+        <input type="url" name="imageUrl" placeholder="https://...">
+      </div>
+      <div class="form__group">
+        <label>Ou anexe um arquivo (.jpg, .png)</label>
+        <input type="file" name="imageFile" accept="image/png, image/jpeg">
+      </div>
+      <button type="submit" class="card__button u-margin-top">Salvar Anúncio</button>
+    </form>
   </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

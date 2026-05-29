@@ -80,48 +80,16 @@ projeto-final/
 ### Páginas e Produtos
 
 #### aula_03.html (Homepage)
-- Camiseta Básica Premium (R$ 49,90) → camisetas.html
-- Calça Jeans Clássica (R$ 89,90) → calcas.html
-- Tênis Casual Confortável (R$ 149,90) → tenis.html
-- Camiseta Estampada Exclusiva (R$ 59,90) → camisetas.html
 
 #### camisetas.html
-1. Camiseta Básica (R$ 49,90)
-2. Camiseta Estampada (R$ 59,90)
-3. Camiseta Polo (R$ 69,90)
-4. Camiseta Premium Gola V (R$ 79,90)
 
 #### calcas.html
-1. Calça Jeans Clássica (R$ 89,90)
-2. Calça Social Slim (R$ 119,90)
-3. Calça Cargo Aventureira (R$ 99,90)
-4. Legging Confortável (R$ 79,90)
 
 #### tenis.html
-1. Tênis Casual Confortável (R$ 149,90)
-2. Sapato Social Elegante (R$ 199,90)
-3. Tênis Esportivo Premium (R$ 249,90)
-4. Sandália Confortável (R$ 89,90)
 
 #### departamento.html (Hub de Categorias)
-- Camisetas Premium (**featured**) → camisetas.html
-- Calças Diversificadas → calcas.html
-- Calçados Elegantes → tenis.html
-- Acessórios da Moda → aula_03.html
 
 #### mochilas.html (Acessórios)
-1. Mochila Escolar (R$ 89,90)
-2. Mochila de Viagem (R$ 129,90)
-3. Mochila Executiva (R$ 149,90)
-4. Bolsa Tote Moderna (R$ 109,90)
-
-#### relogios.html (Acessórios)
-1. Relógio Esportivo (R$ 299,90)
-2. Relógio Clássico (R$ 399,90)
-3. Relógio Digital (R$ 199,90)
-4. Smartwatch Inteligente (R$ 599,90)
-
----
 
 ## 🎯 Features Implementadas
 
