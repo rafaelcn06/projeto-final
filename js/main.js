@@ -669,9 +669,18 @@ async function handleCreateAdSubmit(e) {
 if (createAdForm) createAdForm.addEventListener('submit', handleCreateAdSubmit);
 
 // Render functions
+// Substitua a função antiga por esta corrigida:
 function slugFromPath() {
   const p = window.location.pathname.split('/').pop() || '';
-  return p.replace('.html','').toLowerCase();
+  const slug = p.replace('.html', '').toLowerCase();
+  
+  // SEGREDO DA CORREÇÃO: Se a página estiver vazia ou for o index padrão, 
+  // força ela a se comportar como a página de destaques (aula_03)
+  if (slug === '' || slug === 'index') {
+    return 'aula_03';
+  }
+  
+  return slug;
 }
 
 function renderProductsForCurrentPage() {
@@ -1303,7 +1312,6 @@ function handleCheckoutSubmit(event) {
     return;
   }
 
-  // CORREÇÃO: Agora usa getCart() para buscar do lugar certo (sessionStorage)
   const cart = typeof getCart === 'function' ? getCart() : [];
   if (cart.length === 0) {
     alert('Seu carrinho está vazio.');
@@ -1351,11 +1359,12 @@ function handleCheckoutSubmit(event) {
   const selectedMethodRadio = document.querySelector('input[name="paymentMethod"]:checked');
   const orderMethod = selectedMethodRadio ? selectedMethodRadio.value : 'cartao_credito';
 
+  // CORREÇÃO: Propriedade ajustada para 'user' e status para 'Em preparação 📦'
   const newOrder = {
     id: 'PED-' + Math.floor(100000 + Math.random() * 900000),
-    username: currentUser.username || currentUser.label,
+    user: currentUser.username || currentUser.label, 
     createdAt: new Date().toISOString(),
-    status: 'Aprovado',
+    status: 'Em preparação 📦',
     total: orderTotal,
     method: orderMethod,
     items: orderItems
@@ -1367,7 +1376,7 @@ function handleCheckoutSubmit(event) {
 
   // Limpeza e Redirecionamento
   if (typeof clearCart === 'function') {
-    clearCart(); // Esta função já limpa o sessionStorage e atualiza a tela
+    clearCart(); // Limpa a sessão
   }
 
   const paymentResult = document.getElementById('paymentResult');
