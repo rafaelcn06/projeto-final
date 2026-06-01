@@ -149,7 +149,7 @@ function updateNavbarMenu(currentUser) {
   const menu = document.getElementById('navbarMenu');
   if (!menu) return;
 
-  const homeLinkItem = menu.querySelector('.navbar__link[href="aula_03.html"]')?.closest('li');
+  const homeLinkItem = menu.querySelector('.navbar__link[href="index.html"]')?.closest('li');
   if (homeLinkItem) homeLinkItem.remove();
 
   const ofertasItem = menu.querySelector('.navbar__link[href="ofertas.html"]')?.closest('li');
@@ -702,7 +702,7 @@ function slugFromPath() {
   const slug = p.replace('.html', '').toLowerCase();
   
   if (slug === '' || slug === 'index') {
-    return 'aula_03';
+    return 'index';
   }
   
   return slug;
@@ -799,7 +799,7 @@ function renderProductsForCategory(categorySlug) {
   let products = getProducts();
   if (categorySlug === 'departamento') {
     // keep all products on the department page
-  } else if (categorySlug === 'ofertas' || categorySlug === 'aula_03') {
+  } else if (categorySlug === 'ofertas' || categorySlug === 'index') {
     products = products.slice(0, 6);
   } else {
     products = products.filter(p => p.category === categorySlug);
@@ -946,8 +946,7 @@ function renderCheckoutPage() {
   if (paymentResult) paymentResult.innerHTML = '';
 }
 
-// Esta função é chamada quando o usuário seleciona um método de pagamento. 
-// Ela atualiza a interface para mostrar os campos relevantes para o método escolhido e habilita ou desabilita os inputs de acordo.
+// Esta função é chamada quando o usuário seleciona um método de pagamento. Ela atualiza a interface para mostrar os campos relevantes para o método escolhido e habilita ou desabilita os inputs de acordo.
 function updatePaymentDetails() {
   // 1. Descobre qual método está selecionado usando os values reais do HTML
   const checkedRadio = document.querySelector('input[name="paymentMethod"]:checked');
