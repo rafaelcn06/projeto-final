@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calças - Arena Multimarcas</title>
+
+  <!--LINKS PARA FONTES  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <!--LINKS PARA CSS -->
   <link rel="stylesheet" href="css/tokens/main.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
@@ -32,7 +36,7 @@
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Home</a></li>
         
-        <li class="navbar__item navbar__dropdown">
+        <li class="navbar__item navbar__dropdown"> <!-- DROPDOWN DE CATEGORIAS -->
           <a href="#" class="navbar__link">Categorias</a>
           <ul class="navbar__submenu">
             <li><a href="camisetas.html" class="navbar__sublink">Camisetas</a></li>
@@ -59,6 +63,9 @@
 <section class="section">
   <h2 class="section__title">Calças - Conforto e Estilo</h2>
   <div class="cards-grid">
+
+    <!-- ESPAÇO PARA OS CARDS DE PRODUTOS QUE SERÃO EXIBIDOS VIA JAVASCRIPT -->
+
   </div>
 </section>
 </main>
@@ -67,62 +74,79 @@
     <p class="footer__copyright">© <span id="footerYear">2026</span> Arena Multimarcas. Todos os direitos reservados.</p>
   </div>
 </footer>
-  <div class="modal" id="loginModal" aria-hidden="true">
-    <div class="modal__backdrop" id="modalBackdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="closeLoginModal" aria-label="Fechar">×</button>
-      <h2>Entrar no site</h2>
-      <form id="loginForm" class="form">
-        <label for="loginUser">Usuário</label>
-        <input type="text" id="loginUser" name="user" placeholder="admin ou cliente" required>
+
+<!-- MODAL DE LOGIN / CRIAR ANÚNCIO -->
+
+<!-- JANELA DE LOGIN -->
+<div id="loginModal" class="modal" aria-hidden="true">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button id="closeLoginModal" class="modal__close">✖</button>
+    <h2>Fazer Login</h2>
+    <div id="loginError" class="error-msg"></div>
+    <form id="loginForm" class="form">
+      <div class="form__group">
+        <label for="loginUser">Usuário (cliente ou admin)</label>
+        <input type="text" id="loginUser" required>
+      </div>
+      <div class="form__group">
         <label for="loginPassword">Senha</label>
-        <input type="password" id="loginPassword" name="password" placeholder="admim ou cliente" required>
-        <button type="submit" class="card__button">Entrar</button>
-        <p id="loginError" class="form__error" aria-live="polite"></p>
-      </form>
-    </div>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit" class="card__button u-margin-top">Entrar</button>
+    </form>
   </div>
+</div>
 
-  <div class="modal" id="createAdModal" aria-hidden="true">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="closeCreateAdModal" aria-label="Fechar">×</button>
-      <h2>Criar Anúncio</h2>
-      <form id="createAdForm" class="form">
-        <label for="adTitle">Título</label>
-        <input type="text" id="adTitle" name="title" required>
 
-        <label for="adDescription">Descrição</label>
-        <textarea id="adDescription" name="description" rows="3" required></textarea>
-
-        <label for="adCategory">Categoria</label>
-        <select id="adCategory" name="category" required>
+<!-- JANELA DE CRIAÇÃO DE ANÚNCIO -->
+<div id="createAdModal" class="modal" aria-hidden="true">
+  <div class="modal__backdrop"></div>
+  <div class="modal__content">
+    <button id="closeCreateAdModal" class="modal__close">✖</button>
+    <h2>Criar Novo Anúncio</h2>
+    <div id="createAdError" class="error-msg"></div>
+    <form id="createAdForm" class="form">
+      <div class="form__group">
+        <label>Título do Produto</label>
+        <input type="text" name="title" required>
+      </div>
+      <div class="form__group">
+        <label>Descrição</label>
+        <textarea name="description" rows="2" required></textarea>
+      </div>
+      <div class="form__group">
+        <label>Categoria</label>
+        <select name="category" required>
           <option value="camisetas">Camisetas</option>
           <option value="calcas">Calças</option>
           <option value="tenis">Tênis</option>
           <option value="relogios">Relógios</option>
           <option value="mochilas">Mochilas</option>
-          <option value="ofertas">Ofertas</option>
-          <option value="departamento">Departamento</option>
         </select>
-
-        <label for="adPrice">Preço (R$)</label>
-        <input type="number" id="adPrice" name="price" min="0" step="0.01" required>
-
-        <label for="adStock">Estoque</label>
-        <input type="number" id="adStock" name="stock" min="0" step="1" required>
-
-        <label for="adImageUrl">Link da imagem</label>
-        <input type="url" id="adImageUrl" name="imageUrl" placeholder="https://...">
-
-        <label for="adImageFile">Ou anexar imagem (.jpg, .png)</label>
-        <input type="file" id="adImageFile" name="imageFile" accept="image/*">
-
-        <button type="submit" class="card__button">Criar anúncio</button>
-        <p id="createAdError" class="form__error" aria-live="polite"></p>
-      </form>
-    </div>
+      </div>
+      <div class="form__group">
+        <label>Preço (R$)</label>
+        <input type="number" name="price" step="0.01" required>
+      </div>
+      <div class="form__group">
+        <label>Estoque Inicial</label>
+        <input type="number" name="stock" required>
+      </div>
+      <div class="form__group">
+        <label>URL da Imagem</label>
+        <input type="url" name="imageUrl" placeholder="https://...">
+      </div>
+      <div class="form__group">
+        <label>Ou anexe um arquivo (.jpg, .png)</label>
+        <input type="file" name="imageFile" accept="image/png, image/jpeg">
+      </div>
+      <button type="submit" class="card__button u-margin-top">Salvar Anúncio</button>
+    </form>
   </div>
+</div>
+
+<!--__________________________________________FINAL DA CRIAÇÃO DE LOGIN / ANÚNCIO____________________________________-->
 
 <script src="js/main.js"></script>
 </body>

@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arena Multimarcas - Início</title>
 
+
+  <!-- LINKS PARA FONTES  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+  <!-- LINKS PARA CSS -->
   <link rel="stylesheet" href="css/tokens/main.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/base.css">
@@ -20,7 +23,8 @@
   <link rel="stylesheet" href="css/utilities.css">
 
   <style>
-    /* Estilos base para os Modais */
+
+    /* JANELA DE LOGIN E CRIAÇÃO DE ANÚNCIO */
     .modal {
       display: none;
       position: fixed;
@@ -59,6 +63,10 @@
       font-size: var(--fs-sm);
       margin-bottom: var(--space-sm);
     }
+
+    /*_____________________________________________________FINAL MODAIS_____________________________________________________*/
+
+
   </style>
 </head>
 <body>
@@ -74,7 +82,7 @@
       </button>
       <ul class="navbar__menu" id="navbarMenu">
         <li class="navbar__item"><a href="aula_03.html" class="navbar__link">Home</a></li>
-        <li class="navbar__item navbar__dropdown">
+        <li class="navbar__item navbar__dropdown"> <!-- DROPDOWN DE CATEGORIAS -->
           <a href="#" class="navbar__link">Categorias</a>
           <ul class="navbar__submenu">
             <li><a href="camisetas.html" class="navbar__sublink">Camisetas</a></li>
@@ -101,7 +109,11 @@
   <section class="section">
     <h1 class="section__title">Destaques da Arena</h1>
     
-    <div class="cards-grid"></div>
+    <div class="cards-grid">
+
+    <!-- ESPAÇO PARA OS CARDS DE PRODUTOS QUE SERÃO EXIBIDOS VIA JAVASCRIPT -->
+
+    </div>
 
   </section>
 </main>
@@ -112,6 +124,10 @@
   </div>
 </footer>
 
+
+<!-- MODAL DE LOGIN / CRIAR ANÚNCIO -->
+
+<!-- JANELA DE LOGIN -->
 <div id="loginModal" class="modal" aria-hidden="true">
   <div class="modal__backdrop"></div>
   <div class="modal__content">
@@ -132,6 +148,8 @@
   </div>
 </div>
 
+
+<!-- JANELA DE CRIAÇÃO DE ANÚNCIO -->
 <div id="createAdModal" class="modal" aria-hidden="true">
   <div class="modal__backdrop"></div>
   <div class="modal__content">
@@ -178,6 +196,9 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<!--__________________________________________FINAL DA CRIAÇÃO DE LOGIN / ANÚNCIO____________________________________-->
+
+
+<script src="js/main.js"></script> <!-- LINK PARA O JAVASCRIPT QUE CONTÉM TODA A LÓGICA DE INTERAÇÃO DO SITE -->
 </body>
 </html>

@@ -1,8 +1,12 @@
 /* ========================================
    FOOTER COMPONENT
    ======================================== */
+/* Footer usado para exibir informações de contato, links úteis e direitos autorais no final da página. 
+O layout é responsivo, adaptando-se a diferentes tamanhos de tela usando CSS Grid. */
 
 .footer {
+  /* Container principal do footer, com fundo escuro e texto em tom neutro para criar contraste. O
+   footer é dividido em seções usando CSS Grid para organizar o conteúdo de forma clara e acessível. */
   background-color: var(--color-neutral-900);
   color: var(--color-neutral-400);
   margin-top: var(--space-2xl);
@@ -10,6 +14,8 @@
 }
 
 .footer__container {
+  /* Container interno do footer, com largura máxima definida para centralizar o conteúdo e layout em grid para organizar as colunas. 
+  O espaçamento entre as colunas é controlado por gap, e o padding inferior garante um espaçamento adequado antes do rodapé final. */
   max-width: var(--layout-max-width);
   margin: 0 auto;
   display: grid;
@@ -20,14 +26,14 @@
 }
 
 /* Tablets (>= 768px) - 2 columns */
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* Em telas de tablet, o layout do footer muda para duas colunas, permitindo uma melhor organização do conteúdo sem sobrecarregar a visualização. */
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Desktop (>= 1200px) - 4 columns */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) { /* Em telas de desktop, o layout do footer muda para quatro colunas, permitindo uma organização mais detalhada do conteúdo. */
   .footer__container {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -36,13 +42,16 @@
 /* ========================================
    FOOTER COLUMN
    ======================================== */
+   /* coluna do footer usada para organizar diferentes seções de conteúdo, como informações de contato, links úteis, redes sociais e outras categorias relevantes.*/
 
 .footer__column {
+  /* Container para cada coluna do footer, com padding para criar espaçamento interno e borda inferior para separar visualmente as seções.*/
   display: flex;
   flex-direction: column;
 }
 
 .footer__title {
+  /* Título de cada coluna do footer, com estilo de destaque usando a fonte de título, tamanho de fonte maior e cor neutra clara para criar contraste com o fundo escuro. */
   font-family: var(--ff-heading);
   font-size: var(--fs-base);
   font-weight: var(--fw-bold);
@@ -53,6 +62,7 @@
 /* ========================================
    FOOTER LIST & LINKS
    ======================================== */
+   /* lista de links do footer usada para exibir links úteis, informações de contato ou outras categorias relevantes.*/
 
 .footer__list {
   list-style: none;
@@ -97,6 +107,7 @@
 /* ========================================
    FOOTER BOTTOM
    ======================================== */
+    /* seção inferior do footer usada para exibir informações de direitos autorais, políticas de privacidade ou outras informações legais.*/
 
 .footer__bottom {
   max-width: var(--layout-max-width);

@@ -1,4 +1,9 @@
 :root {
+    /* ========================================
+      COLORS - Semantic
+      ======================================== */
+      /* Este arquivo define as variáveis CSS para as cores semânticas, que são usadas para representar diferentes estados e propósitos no design, como fundo, texto, bordas e elementos de interface. 
+      Essas variáveis permitem criar uma hierarquia visual clara e consistente em todo o projeto, facilitando a compreensão e a navegação para os usuários. */
   --color-bg: #FFFFFF;
   --color-bg-alt: #F9FAFB;
   --color-text: #1F2937;
@@ -21,6 +26,11 @@
 }
 
 :root[data-theme='dark'] {
+    /* ========================================
+        COLORS - Semantic (Dark Theme)
+        ======================================== */
+        /* Este bloco de variáveis CSS é usado para definir as cores semânticas específicas para o tema escuro do projeto. 
+        Ele substitui as variáveis de cor padrão com valores mais adequados para um ambiente de baixa luminosidade, garantindo que o design permaneça legível e visualmente agradável mesmo em condições de pouca luz. */
   --color-bg: #111827;
   --color-bg-alt: #1F2937;
   --color-text: #F9FAFB;

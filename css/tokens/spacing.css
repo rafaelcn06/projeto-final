@@ -1,4 +1,9 @@
 :root {
+    /* ========================================
+      SPACING
+      ======================================== */
+      /* Este arquivo define as variáveis CSS para os espaçamentos, que são usados para controlar as margens e preenchimentos em todo o projeto. 
+      Essas variáveis permitem criar um sistema de espaçamento consistente e escalável, facilitando a manutenção do código e garantindo uma aparência coesa em todas as páginas e componentes. */
   --space-3xs: 0.25rem;
   --space-2xs: 0.625rem;
   --space-xs: 0.5rem;

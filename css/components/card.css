@@ -2,6 +2,8 @@
    CARD COMPONENT
    ======================================== */
 
+   /* Card usado para exibir produtos, categorias ou qualquer conteúdo visualmente destacado. */
+
 .card {
   background-color: var(--color-bg);
   border: var(--border-thin) solid var(--color-border);
@@ -16,6 +18,7 @@
 }
 
 .card:hover {
+  /* Efeito de elevação ao passar o mouse */
   transform: translateY(-0.5rem);
   box-shadow: var(--shadow-xl);
 }
@@ -24,7 +27,10 @@
    CARD IMAGE
    ======================================== */
 
+   /* card usado para exibir uma imagem de produto ou categoria. A imagem é responsiva e tem um efeito de zoom ao passar o mouse. */
+
 .card__image {
+  /* Container para a imagem do card, com altura fixa e overflow oculto para criar um efeito de corte. */
   width: 100%;
   height: var(--card-image-height);
   overflow: hidden;
@@ -32,6 +38,7 @@
 }
 
 .card__image img {
+  /* A imagem dentro do card, que se ajusta ao container e tem um efeito de zoom suave ao passar o mouse. */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -39,14 +46,18 @@
 }
 
 .card:hover .card__image img {
+  /* Efeito de zoom ao passar o mouse sobre a imagem do card. */
   transform: scale(1.05);
 }
 
 /* ========================================
    CARD CONTENT
    ======================================== */
+   /* card usado para exibir o conteúdo textual do produto ou categoria, como título, descrição e meta-informações. 
+   O conteúdo é organizado em uma coluna flexível para garantir que o botão fique sempre na parte inferior do card. */
 
 .card__content {
+  /* Container para o conteúdo do card, com padding e layout flexível para organizar o título, descrição e meta-informações. */
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
@@ -54,6 +65,7 @@
 }
 
 .card__title {
+  /* Título do card, com estilo de destaque usando a fonte de heading, tamanho grande e peso bold. */
   font-family: var(--ff-heading);
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
@@ -63,6 +75,8 @@
 }
 
 .card__description {
+  /* Descrição do card, com estilo mais leve usando a fonte primária, tamanho pequeno e cor de texto mais clara.
+   O flex-grow garante que a descrição ocupe o espaço disponível, empurrando o botão para a parte inferior do card. */
   font-size: var(--fs-sm);
   color: var(--color-text-light);
   line-height: var(--lh-normal);
@@ -73,8 +87,10 @@
 /* ========================================
    CARD META
    ======================================== */
+   /* card usado para exibir informações adicionais sobre o produto ou categoria, como categoria, nível ou outras tags.*/
 
 .card__meta {
+  /* Container para as meta-informações do card, com layout flexível para organizar as tags de categoria, nível ou outras informações adicionais. */
   display: flex;
   gap: var(--space-sm);
   margin-bottom: var(--space-md);
@@ -82,6 +98,7 @@
 }
 
 .card__category {
+  /* Tag de categoria do card, com estilo de destaque usando um fundo colorido, cor de texto clara e bordas arredondadas. */
   display: inline-block;
   background-color: var(--color-primary-500);
   color: white;
@@ -93,6 +110,7 @@
 }
 
 .card__level {
+  /* Tag de nível do card, com estilo mais neutro usando um fundo cinza claro, cor de texto escura e bordas arredondadas. */
   display: inline-block;
   background-color: var(--color-neutral-200);
   color: var(--color-text);
@@ -105,8 +123,11 @@
 /* ========================================
    CARD BUTTON
    ======================================== */
+    /* botão do card usado para ações como "Adicionar ao Carrinho", "Ver Detalhes" ou "Comprar Agora". 
+    O botão tem um estilo de destaque com cor de fundo primária, texto branco e um efeito de hover que muda a cor de fundo e adiciona uma leve elevação. */
 
 .card__button {
+  /* Botão do card, com estilo de destaque usando a cor primária, texto branco e bordas arredondadas. O botão é posicionado na parte inferior do card graças ao layout flexível do conteúdo. */
   padding: var(--space-sm) var(--space-md);
   background-color: var(--color-primary-500);
   color: white;
@@ -116,29 +137,34 @@
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
   cursor: pointer;
-  transition: 
+  transition: /* Efeito de transição suave para mudanças de cor e transformações ao interagir com o botão. */
     background-color var(--transition-normal),
     transform var(--transition-fast);
 }
 
 .card__button:hover {
+  /* Efeito de hover para o botão do card, que muda a cor de fundo para um tom mais escuro da cor primária e adiciona uma leve elevação. */
   background-color: var(--color-primary-600);
   transform: translateY(-2px);
 }
 
 .card__button:active {
+  /* Efeito de clique para o botão do card, que adiciona uma leve depressão para simular o efeito de pressionar o botão. */
   transform: translateY(0);
 }
 
 /* ========================================
    CARD FEATURED VARIANT
    ======================================== */
+   /* variante de card usado para destacar produtos ou categorias especiais, como promoções, lançamentos ou itens em destaque.*/
 
 .card--featured {
+  /* Variante de card para itens em destaque, com bordas mais grossas e coloridas para chamar a atenção. */
   border-color: var(--color-primary-500);
   border-width: var(--border-normal);
 }
 
 .card--featured .card__category {
+  /* Tag de categoria para itens em destaque, com um fundo mais vibrante para realçar a importância do item. */
   background-color: var(--color-primary-700);
 }

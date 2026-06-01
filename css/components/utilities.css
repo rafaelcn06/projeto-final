@@ -1,3 +1,11 @@
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+/* Este arquivo contém classes utilitárias que fornecem estilos rápidos e reutilizáveis para ocultar elementos, 
+controlar a visibilidade em diferentes dispositivos, ajustar margens e preenchimentos, e alinhar texto. 
+Essas classes são projetadas para serem usadas em conjunto com os componentes para facilitar a personalização e o layout responsivo. */
+
 .text-center {
   text-align: center;
 }

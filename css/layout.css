@@ -48,19 +48,18 @@ section {
   }
 }
 
-/* Desktop (>= 1200px) - 3 columns */
+
 @media (min-width: 1200px) {
   .cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Card featured spans 2 columns on desktop */
+
   .card--featured {
     grid-column: span 2;
     grid-row: span 1;
   }
 
-  /* Optional: Featured card can be full width for better design */
   .cards-grid .card--featured:nth-child(1) {
     grid-column: 1 / -1;
   }

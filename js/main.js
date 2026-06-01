@@ -69,6 +69,9 @@ if (footerYear) {
   footerYear.textContent = currentYear;
 }
 
+// ========================================================================
+
+
 // ===== LOGIN - Usuário e Carrinho =====
 const loginTrigger = document.getElementById('loginTrigger');
 const loginModal = document.getElementById('loginModal');
@@ -138,6 +141,10 @@ function updateUserState() {
   updateStaticCardActions();
 }
 
+// Esta função atualiza dinamicamente o menu de navegação com base no usuário atualmente logado. 
+// Ela remove o link "Home" para todos, garante que os links de "Ofertas" e "Categorias" estejam sempre visíveis, e adiciona um link de "Pedidos" 
+// apenas para clientes logados. Para administradores, ela mantém o link de criação de anúncios visível. Essa abordagem permite que o menu se adapte ao 
+// contexto do usuário, melhorando a experiência de navegação.
 function updateNavbarMenu(currentUser) {
   const menu = document.getElementById('navbarMenu');
   if (!menu) return;
@@ -170,6 +177,8 @@ function updateNavbarMenu(currentUser) {
   }
 }
 
+
+// ======== Funções para abrir e fechar o modal de login ====================
 function openLoginModal() {
   if (!loginModal) return;
   loginModal.classList.add('modal--open');
@@ -249,6 +258,8 @@ if (cartButton) {
 
 updateUserState();
 
+// =======================================================================
+
 /* ==================================================
    ANÚNCIOS - Criação, Renderização e Carrinho Básico
    ================================================== */
@@ -259,6 +270,7 @@ const closeCreateAdModal = document.getElementById('closeCreateAdModal');
 const createAdForm = document.getElementById('createAdForm');
 const createAdError = document.getElementById('createAdError');
 
+// Funções para manipular os produtos armazenados no localStorage
 function getProducts() {
   try {
     return JSON.parse(localStorage.getItem('arenaProducts')) || [];
@@ -266,11 +278,11 @@ function getProducts() {
     return [];
   }
 }
-
+// Esta função salva o array de produtos atualizado no localStorage, garantindo que as alterações persistam mesmo após recarregar a página.
 function setProducts(arr) {
   localStorage.setItem('arenaProducts', JSON.stringify(arr));
 }
-
+// Esta função retorna um array de produtos pré-definidos, cada um com propriedades como id, título, descrição, categoria, preço, estoque, imagem e data de criação. Esses produtos servem como dados iniciais para as cards estáticas na página e para garantir que haja conteúdo para exibir mesmo antes de o usuário criar anúncios personalizados.
 function getInitialProducts() {
   return [
     // ================== CAMISETAS ==================
@@ -485,6 +497,8 @@ function getInitialProducts() {
   ];
 }
 
+// Esta função verifica se já existem produtos armazenados no localStorage. Se não houver, ela carrega um conjunto inicial de produtos pré-definidos. 
+// Isso garante que as cards estáticas na página tenham dados para exibir, mesmo que o usuário nunca tenha criado um anúncio ou se os dados tiverem sido limpos.
 function ensureProductsSeeded() {
   const current = getProducts();
   if (!current.length) {
@@ -492,12 +506,14 @@ function ensureProductsSeeded() {
   }
 }
 
+// Esta função encontra um produto pelo título, normalizando o texto para comparação.
 function findProductByTitle(title) {
   if (!title) return null;
   const normalized = title.trim().toLowerCase();
   return getProducts().find((product) => product.title.trim().toLowerCase() === normalized);
 }
 
+// Esta função percorre todas as cards estáticas na página e atualiza a visibilidade dos botões de exclusão com base no papel do usuário atualmente logado.
 function updateStaticCardActions() {
   const currentUser = getStoredUser();
   document.querySelectorAll('.card__delete-button').forEach((button) => {
@@ -509,6 +525,7 @@ function updateStaticCardActions() {
   });
 }
 
+// Esta função percorre todas as cards estáticas na página, identifica qual produto elas representam com base no título, e então adiciona as informações de descrição, estoque, preço e o botão de exclusão (visível apenas para admins).
 function hydrateStaticCards() {
   ensureProductsSeeded();
   const products = getProducts();
@@ -560,6 +577,8 @@ function hydrateStaticCards() {
   updateStaticCardActions();
 }
 
+// Esta função remove um produto do localStorage com base no ID fornecido, e também remove a card correspondente da página. 
+// Após a exclusão, ela re-renderiza os produtos para garantir que a interface esteja atualizada.
 function deleteProductById(productId) {
   const products = getProducts();
   const filtered = products.filter((product) => product.id !== productId);
@@ -571,12 +590,17 @@ function deleteProductById(productId) {
   renderProductsForCurrentPage();
 }
 
+// Esta função é responsável por abrir o modal de criação de anúncio, mas antes disso, ela verifica se o usuário atual tem permissão para criar anúncios
+//  (ou seja, se é um administrador). Se o usuário não for um administrador, ele recebe um alerta informando que apenas administradores podem criar anúncios.
 function openCreateAdModal() {
   if (!createAdModal) return;
   createAdModal.classList.add('modal--open');
   createAdModal.setAttribute('aria-hidden', 'false');
 }
 
+
+// Esta função fecha o modal de criação de anúncio e limpa quaisquer mensagens de erro ou dados do formulário. 
+// Ela é chamada tanto quando o usuário clica no botão de fechar quanto após um anúncio ser criado com sucesso.
 function closeCreateAdModalFunc() {
   if (!createAdModal) return;
   createAdModal.classList.remove('modal--open');
@@ -598,7 +622,7 @@ if (createAdBtn) {
 
 if (closeCreateAdModal) closeCreateAdModal.addEventListener('click', closeCreateAdModalFunc);
 
-// handle file to dataURL
+// Função utilitária para converter um arquivo de imagem em Data URL (base64)
 function fileToDataURL(file) {
   return new Promise((res, rej) => {
     const reader = new FileReader();
@@ -608,6 +632,8 @@ function fileToDataURL(file) {
   });
 }
 
+// Esta função lida com o envio do formulário de criação de anúncio. Ela valida os dados inseridos, processa a imagem (se fornecida), 
+// cria um novo objeto de produto e o salva no localStorage.
 async function handleCreateAdSubmit(e) {
   e.preventDefault();
   if (!createAdForm || !createAdError) return;
@@ -669,13 +695,12 @@ async function handleCreateAdSubmit(e) {
 if (createAdForm) createAdForm.addEventListener('submit', handleCreateAdSubmit);
 
 // Render functions
-// Substitua a função antiga por esta corrigida:
+
+// Extrai o slug da URL para determinar qual categoria ou página está sendo visualizada
 function slugFromPath() {
   const p = window.location.pathname.split('/').pop() || '';
   const slug = p.replace('.html', '').toLowerCase();
   
-  // SEGREDO DA CORREÇÃO: Se a página estiver vazia ou for o index padrão, 
-  // força ela a se comportar como a página de destaques (aula_03)
   if (slug === '' || slug === 'index') {
     return 'aula_03';
   }
@@ -683,11 +708,15 @@ function slugFromPath() {
   return slug;
 }
 
+// Esta função é chamada para renderizar os produtos na página atual, com base no slug extraído da URL. 
+// Ela determina qual categoria ou página está sendo visualizada e chama a função de renderização apropriada.
 function renderProductsForCurrentPage() {
   const slug = slugFromPath();
   renderProductsForCategory(slug);
 }
 
+// Esta função cria um elemento de card para um produto específico, preenchendo-o com as informações do produto e configurando os botões de ação 
+// (adicionar ao carrinho e excluir).
 function createProductCard(product) {
   const article = document.createElement('article');
   article.className = 'card product-card';
@@ -752,6 +781,10 @@ function createProductCard(product) {
   return article;
 }
 
+// Esta função renderiza os produtos na página com base na categoria ou slug fornecido. Ela primeiro garante que os produtos estejam carregados, 
+// depois remove quaisquer cards dinâmicos existentes para evitar duplicação. 
+// Em seguida, ela filtra os produtos de acordo com a categoria ou slug e cria novos cards para cada produto que deve ser exibido. 
+// A função também verifica se um produto já está sendo exibido para evitar adicionar duplicatas.
 function renderProductsForCategory(categorySlug) {
   const grid = document.querySelector('.cards-grid');
   if (!grid) return;
@@ -779,7 +812,6 @@ function renderProductsForCategory(categorySlug) {
   });
 }
 
-// Delegate clicks: product card click -> product detail, add-to-cart, delete
 document.addEventListener('click', (e) => {
   const deleteBtn = e.target.closest('.card__delete-button');
   if (deleteBtn) {
@@ -816,6 +848,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Carrinho e Checkout
 function getCart() {
   try {
     return JSON.parse(sessionStorage.getItem('arenaCart') || '[]');
@@ -913,6 +946,8 @@ function renderCheckoutPage() {
   if (paymentResult) paymentResult.innerHTML = '';
 }
 
+// Esta função é chamada quando o usuário seleciona um método de pagamento. 
+// Ela atualiza a interface para mostrar os campos relevantes para o método escolhido e habilita ou desabilita os inputs de acordo.
 function updatePaymentDetails() {
   // 1. Descobre qual método está selecionado usando os values reais do HTML
   const checkedRadio = document.querySelector('input[name="paymentMethod"]:checked');

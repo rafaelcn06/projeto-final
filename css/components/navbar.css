@@ -1,8 +1,12 @@
 /* ========================================
    NAVBAR COMPONENT
    ======================================== */
+/* Navbar usada para navegação principal do site, exibindo o logo, links de navegação e ações do usuário. 
+O layout é responsivo, adaptando-se a diferentes tamanhos de tela usando flexbox e media queries. */
 
 .header {
+  /* Container principal do header, com fundo escuro e sombra para criar destaque. 
+  O header é fixo no topo da página para garantir que a navegação esteja sempre acessível. */
   background-color: var(--color-neutral-900);
   box-shadow: var(--shadow-md);
   position: sticky;
@@ -11,10 +15,13 @@
 }
 
 .navbar {
+    /* Container interno da navbar, com largura máxima definida para centralizar o conteúdo e layout flexível para organizar o logo, links de navegação e ações do usuário. 
+    O espaçamento entre os elementos é controlado por gap, e o padding garante um espaçamento adequado dentro da navbar. */
   width: 100%;
 }
 
 .navbar__container {
+  /* Container interno da navbar, com largura máxima definida para centralizar o conteúdo e layout flexível para organizar o logo, links de navegação e ações do usuário.*/
   max-width: var(--layout-max-width);
   margin: 0 auto;
   padding: var(--space-md);
@@ -39,6 +46,9 @@
 /* ========================================
    HAMBURGER MENU (Mobile First)
    ======================================== */
+   /* hamburger menu usado para exibir o menu de navegação em dispositivos móveis. 
+   O menu é ativado por um botão de hambúrguer, que se transforma em um ícone de "X" quando o menu está aberto. 
+   O menu é exibido como uma lista vertical que cobre toda a largura da tela, com links de navegação e ações do usuário organizados de forma clara e acessível. */
 
 .navbar__hamburger {
   display: flex;
@@ -74,6 +84,7 @@
 /* ========================================
    MENU (Mobile Vertical)
    ======================================== */
+   /* menu usado para exibir os links de navegação em dispositivos móveis.*/
 
 .navbar__menu {
   display: none;
@@ -124,7 +135,7 @@
   font-size: 1rem !important; /* Mantém o texto das subcategorias um pouco menor que o das categorias principais */
 }
 
-.navbar__link:hover,
+.navbar__link:hover, 
 .navbar__link:focus {
   background-color: var(--color-neutral-700);
   border-left-color: var(--color-primary-500);
@@ -141,7 +152,9 @@
   gap: var(--space-sm);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) { /* Ajustes para telas menores, como smartphones */
+   /* ajustes para telas menores, como smartphones, onde o layout da navbar é adaptado para melhor usabilidade. 
+   O menu de navegação é exibido como uma lista vertical que cobre toda a largura da tela, e as ações do usuário são organizadas de forma clara e acessível. */
   .navbar__container {
     flex-wrap: wrap;
   }
@@ -163,7 +176,9 @@
   }
 }
 
-.navbar__button {
+.navbar__button { 
+  /* botão usado para ações como "Login", "Registrar" ou "Sair". 
+  O botão tem um estilo de destaque com bordas arredondadas, cor de fundo neutra e um efeito de hover que muda a cor de fundo e a borda para criar um feedback visual claro. */
   border: 1px solid var(--color-border-subtle);
   background: transparent;
   color: var(--color-neutral-50);
@@ -185,7 +200,7 @@
   border-color: var(--color-primary-500);
 }
 
-.navbar__cart {
+.navbar__cart { /* ícone de carrinho usado para acessar o carrinho de compras.*/
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -208,11 +223,11 @@
   font-size: 0.9rem;
 }
 
-.hide {
+.hide { /* classe utilitária para esconder elementos, usada para ocultar o menu de navegação em dispositivos móveis quando não está ativo. */
   display: none !important;
 }
 
-.modal {
+.modal { /* modal usado para exibir conteúdo em uma sobreposição, como formulários de login, detalhes de produtos ou mensagens de confirmação.*/
   position: fixed;
   inset: 0;
   display: none;
@@ -221,27 +236,29 @@
   z-index: calc(var(--z-sticky) + 10);
 }
 
-.modal--open {
+.modal--open { /* classe usada para abrir o modal, que exibe o conteúdo em uma sobreposição centralizada na tela. */
   display: flex;
 }
 
-.modal__backdrop {
+.modal__backdrop { /* plano de fundo do modal, que cobre toda a tela com uma cor semi-transparente para criar um efeito de foco no conteúdo do modal. */
   position: absolute;
   inset: 0;
   background: var(--color-overlay);
 }
 
-.modal__content {
+.modal__content { 
+  /* conteúdo do modal, que é posicionado acima do plano de fundo e tem um estilo de destaque com fundo branco, bordas arredondadas 
+  e sombra para criar uma aparência de cartão.*/
   position: relative;
   background: var(--color-neutral-50);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   width: min(var(--modal-max-width), calc(100% - var(--space-lg)));
   box-shadow: var(--shadow-xl);
-  z-index: 1;
+  z-index: 1; /* Garante que o conteúdo do modal fique acima do plano de fundo. */
 }
 
-.modal__close {
+.modal__close { 
   position: absolute;
   top: var(--space-sm);
   right: var(--space-sm);

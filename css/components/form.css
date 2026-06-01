@@ -1,3 +1,9 @@
+
+/* ========================================
+   FORM
+   ======================================== */
+   /* estilo base para formulários, definindo a largura máxima, centralização e layout em grid para organizar os campos do formulário com espaçamento consistente. */
+
 form {
   max-width: var(--form-max-width);
   margin: auto;

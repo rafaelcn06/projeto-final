@@ -1,4 +1,8 @@
-* {
+* { /* ========================================
+  RESET
+  ======================================== */
+  /* Este arquivo é um reset CSS que remove as margens, preenchimentos e define o box-sizing para border-box em todos os elementos. 
+  Isso garante que o layout seja consistente em diferentes navegadores. */
   margin: 0;
   padding: 0;
   box-sizing: border-box;

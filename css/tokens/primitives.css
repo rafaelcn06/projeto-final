@@ -1,4 +1,11 @@
 :root {
+   /* ========================================
+     COLORS - Primitives
+     ======================================== */
+     /* Este arquivo define as variáveis CSS para as cores primárias, secundárias, neutras, de sucesso, perigo e aviso, bem como as cores de sobreposição e sombra.
+     Essas variáveis são usadas em todo o projeto para garantir consistência visual e facilitar a manutenção do código. */
+     
+
   /* ========================================
      COLORS - Palette
      ======================================== */
@@ -31,6 +38,9 @@
   /* ========================================
      RADIUS & BORDERS
      ======================================== */
+     /* Variáveis para bordas e raios de borda, que definem os estilos de contorno para elementos como botões, cartões e modais.
+     Essas variáveis permitem criar bordas arredondadas de diferentes tamanhos e estilos de borda, garantindo uma aparência coesa em todo o projeto. */
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -44,6 +54,9 @@
   /* ========================================
      SHADOWS
      ======================================== */
+     /* Variáveis para sombras, que definem os estilos de sombra para elementos como cartões, modais e dropdowns.
+     Essas variáveis permitem criar sombras de diferentes intensidades e estilos, adicionando profundidade e destaque aos elementos do projeto. */
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -55,8 +68,11 @@
   /* ========================================
      LAYOUT
      ======================================== */
+   /* Variáveis para layout, que definem as larguras máximas para diferentes tipos de contêineres, como o layout principal, modais, cartões e formulários.
+   Essas variáveis ajudam a garantir que o conteúdo seja exibido de forma consistente e responsiva em diferentes tamanhos de tela, mantendo uma estrutura visual coesa em todo o projeto. */
+
   --layout-max-width: 1200px;
-  --modal-max-width: px;
+  --modal-max-width: 420px;
   --card-image-height: 200px;
   --form-max-width: 400px;
   --dropdown-min-width: 220px;
@@ -64,6 +80,8 @@
 }
 
 :root[data-theme='dark'] {
+   /* Variáveis de cor para o tema escuro, que redefinem as cores de fundo, texto, borda e sombra para criar um contraste adequado e uma aparência coesa em ambientes de baixa luminosidade. 
+   Essas variáveis permitem que o projeto se adapte facilmente ao modo escuro, garantindo uma experiência visual agradável para os usuários que preferem esse tema. */
   --color-bg: #111827;
   --color-bg-alt: #1F2937;
   --color-text: #F9FAFB;

@@ -1,3 +1,10 @@
+
+/* ========================================
+   TOKENS
+   ======================================== */
+   /* Este arquivo é o ponto de entrada para os tokens de design, que são as variáveis CSS que definem as cores, tipografia, espaçamento
+    e outros aspectos visuais do projeto.*/
+
 @import './primitives.css';
 @import './spacing.css';
 @import './typography.css';

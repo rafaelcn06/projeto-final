@@ -1,4 +1,9 @@
 :root {
+    /* ========================================
+      TYPOGRAPHY
+      ======================================== */
+      /* Este arquivo define as variáveis CSS para a tipografia, que incluem as famílias de fontes, pesos, tamanhos e alturas de linha. 
+      Essas variáveis permitem criar um sistema tipográfico consistente e escalável, garantindo que o texto seja legível e visualmente harmonioso em todo o projeto. */
   --ff-primary: 'Inter', sans-serif;
   --ff-heading: 'Poppins', sans-serif;
 
